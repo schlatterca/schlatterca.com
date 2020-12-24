@@ -35,7 +35,7 @@ function afterDusk(){
     let duskHour = res.results.sunset.split(':')[0];
     let duskMinute = res.results.sunset.split(':')[1].split(':')[0];
     
-    if ((hour >= duskHour && minute >= duskMinute)||(hour <= dawnHour && minute <= dawnMinute)){
+    if ((hour >= (parseInt(duskHour)+13) && minute >= duskMinute)||(hour <= (parseInt(dawnHour)+1) && minute <= dawnMinute)){
       console.log("open");
     } else {
       document.getElementsByClassName("section section--head")[0].getElementsByClassName("row")[0].innerHTML = " ";
@@ -43,14 +43,3 @@ function afterDusk(){
     }
   })();
 }
-
-
-
-
-
-
-
-
-
-
-
