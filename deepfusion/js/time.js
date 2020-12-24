@@ -30,13 +30,13 @@ function afterDusk(){
     const API_URL = "https://api.sunrise-sunset.org/json?lat=41.902782&lng=12.496366&date=today";
     const res = await fetch(API_URL).then(r => r.json());
     //console.log(res.results);
-    let dawnHour = res.results.sunrise.split(':')[0];
-    let dawnMinute = res.results.sunrise.split(':')[1].split(':')[0];
-    let duskHour = res.results.sunset.split(':')[0];
-    let duskMinute = res.results.sunset.split(':')[1].split(':')[0];
+    var dawnHour = res.results.sunrise.split(':')[0];
+    var dawnMinute = res.results.sunrise.split(':')[1].split(':')[0];
+    var duskHour = res.results.sunset.split(':')[0];
+    var duskMinute = res.results.sunset.split(':')[1].split(':')[0];
     
-    if ((hour >= duskHour && minute >= duskMinute)||(hour <= dawnHour && minute <= dawnMinute)){
-      console.log("open");
+    if ((hour >= (parseInt(duskHour)+13) && minute >= duskMinute)||(hour <= (parseInt(dawnHour)+1) && minute <= dawnMinute)){
+      //console.log(hour);
       document.getElementsByClassName("container")[0].children[0].setAttribute("style", "text-decoration: none; color: rgb(255,255,255); display: inline;");
     } else {
       document.getElementsByClassName("container")[0].children[0].removeAttribute("href");
@@ -46,21 +46,9 @@ function afterDusk(){
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("deep")[0].style.color = "rgb(30,50,135)";
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("fusion")[0].style.animation = "opacityChange_bi 10s normal forwards";
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("fusion")[0].style.color = "rgb(30,50,135)";
-      document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].innerHTML = "Troppo presto! Torna dopo il tramonto."+"<br />"+"Too soon! Check back after dusk.";
+      document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].innerHTML = "È presto! Torna dopo il tramonto."+"<br />"+"Too soon! Check back after dusk.";
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].style.color = "rgb(30,50,135)";
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].style.animation = "opacityChange_bi 10s normal forwards";
     }
   })();
 }
-
-
-
-
-
-
-
-
-
-
-
-
