@@ -1,0 +1,141 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #333;
+  /*background-color: rgb(30,50,135);*/
+  background-color: rgb(20,30,70);
+  /*background-color: white;*/
+  font-weight: 300;
+  line-height: 1.6; 
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(255, 65, 95);
+  }
+  50% {
+    color: rgb(30, 50, 135);
+    /*color: rgb(255, 255, 255);*/
+  }
+  100% {
+    color: rgb(255, 65, 95);
+  }
+}
+
+.titlebox {
+  width: 100%;
+  /*height: 15vw;
+  margin: 2rem auto;
+  height: 38vw;*/
+  padding: 3vw;
+}
+
+.deep {
+  font-family: "NeueHaas-Lt";
+  /*font-size: 6vw;
+  margin-left: 8vw;*/
+  font-size: 6vw;
+  line-height: 3vw;
+  /*color: rgb(255, 65, 95);*/
+  animation: colorChange 20s infinite;
+  text-align: left;
+  margin-top: 6vw;
+}
+
+.fusion {
+  font-family: "ShelleyTriste";
+  /*font-size: 26vw;
+  margin-left: 17vw;*/
+  font-size: 13.3vw;
+  line-height: 3vw;
+  /*color: rgb(255, 65, 95);*/
+  animation: colorChange 20s infinite;
+  text-align: left;
+  margin-top: -1.2vw;
+  margin-left: 12.8vw;
+  margin-bottom: 4vw;
+}
+
+.descript {
+  font-family: "NeueHaas-Rg";
+  font-size: 3vw;
+  line-height: 3.5vw;
+  text-align: left;
+  margin-left: 0vw;
+  margin-top: 0vw;
+  color: rgb(210,210,210);
+}
+
+.container {
+  width: 94%;
+  margin: 3vw; 
+}
+
+.colop_high {
+  font-family: "NeueHaas-Rg";
+  font-size: 11px;
+  line-height: 12px;
+  text-align: left;
+  margin-right: 12px;
+  margin-top: 12px;
+  animation: opacityChange 10s normal forwards, colorChange 10s normal forwards;
+  top: 0;
+  right: 0;
+  float: right;
+  position: absolute;
+}
+
+.gallery {
+  display: grid;
+  /*grid-template-columns: none;
+  grid-template-rows: none;*/
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(5, auto);
+  grid-gap: 0.6rem; 
+}
+
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
+
+.gallery__item--0 {
+  /*grid-column: 1 / span 2;
+  grid-row: 1 / span 2;*/
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+@media (min-width: 600px) {
+  .titlebox {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .descript {
+    font-family: "NeueHaas-Rg";
+    font-size: 14px;
+    line-height: 17px;
+    text-align: left;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    color: rgb(210,210,210);
+  }
+}
