@@ -34,12 +34,15 @@ function afterDusk(){
     let dawnMinute = res.results.sunrise.split(':')[1].split(':')[0];
     let duskHour = res.results.sunset.split(':')[0];
     let duskMinute = res.results.sunset.split(':')[1].split(':')[0];
-    
-    if ((hour >= (parseInt(duskHour)+13) && minute >= duskMinute)||(hour <= (parseInt(dawnHour)+1) && minute <= dawnMinute)){
+
+    if(((hour > (parseInt(duskHour)+13))||
+      ((hour == (parseInt(duskHour)+1))&&(minute >= (parseInt(duskMinute)))))||
+      ((hour < (parseInt(dawnHour)+1))||
+      ((hour == (parseInt(dawnHour)+1))&&(minute >= (parseInt(dawnMinute)))))){
       console.log("open");
     } else {
       document.getElementsByClassName("section section--head")[0].getElementsByClassName("row")[0].innerHTML = " ";
-      document.getElementsByClassName("titlebox")[1].getElementsByClassName("descript")[0].innerHTML = "Troppo presto! Torna dopo il tramonto."+"<br />"+"Too soon! Check back after dusk."+"<br /><br />"+"“Deep Fusion. Fotografie notturne di un algoritmo” è un progetto di Carlo Andrea Schlatter, realizzato nel 2020 per l'Esame di Tecniche Fotografiche con il Docente Stefano Veschi presso l'ISIA di Urbino."
+      document.getElementsByClassName("titlebox")[1].getElementsByClassName("descript")[0].innerHTML = "Troppo presto! Torna dopo il tramonto."+"<br />"+"Too soon! Check back after dusk."+"<br /><br />"+"“Deep Fusion. Fotografie notturne di un algoritmo” è un progetto di Carlo Andrea Schlatter, realizzato nel 2020 per l'Esame di Tecniche Fotografiche con il Docente Stefano Veschi presso l'ISIA di Urbino.";
     }
   })();
 }
