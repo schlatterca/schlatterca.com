@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personal website</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=-1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!--<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://isiaurbino.net/favicon.ico"/>
+</head>
+
+
+<!-- INIZIO BODY -->
+
+<body style="background-color: white;">
+
+	<!--HEADER-->
+	<div id="header" style="color: rgb(30, 28, 28)";>
+		<div class="refreshButton">
+			<IMG SRC="img/refreshButton.png" onclick="refreshColors()"></IMG>
+		</div>
+	  <div class="leftName">Carlo Andrea Schlatter</div>
+	  <div class="leftName">Graphic Design student</div>
+	  <div class="leftName">Currently based in Italy &nbsp;</div>
+	  <div class="leftName">Think you might &nbsp;</div>
+	  <div class="rightName">PARADE 2020</div>
+	  <div id="about" class="underName" ><a href="#footer" style="text-decoration: none; color: rgb(237, 109, 45);">about</a></div>
+
+	</div>
+	<!--CLOSE HEADER-->
+
+	<!--PRINCIPALE-->
+	<div id="main">
+	</div>
+
+	<!--CLOSE PRINCIPALE-->
+
+	<!--
+	<div id="mark">
+	  <marquee class="marque" scrolldelay="35" scrollamount="4" truespeed=""><a href='https://everpress.com/parade-2020' target='_blank'>🧨🧨🧨🧨🧨 ACQUISTA LA T-SHIRT 🧨🧨🧨🧨🧨</a><a href='https://docs.google.com/forms/d/13ADTYXvQn56VjTqlgMoW1OXTvRkWX-Q7uFyOex_iLcE/edit' target='_blank' style="padding-left: 60px">✨✨✨✨✨ ISCRIVITI ALLA NEWSLETTER ✨✨✨✨✨</a></marquee>
+	</div>-->
+
+	<div id="footer">
+	    <!--<a onclick="topFunction()" id="myBtn" style="width: 100%;text-align: right;">X</a>-->
+	     <div class="about_colophon">
+	     	Hi! My name is Carlo Andrea Schlatter.
+	      ISIA Parade è l’evento di fine anno di ISIA Urbino. In mostra, oltre a una selezione di tesi di laurea dalle ultime tre sessioni, gli output di alcuni corsi e dei workshop tenuti con ospiti nazionali e internazionali. 
+	L’evento offre uno sguardo sull’eterogeneità della proposta didattica e sull’approccio sperimentale al progetto perseguito dall’istituto. Gli elaborati, che mostrano una molteplicità di linguaggi, dall’editoria alla fotografia, dall’illustrazione alla tipografia, presentano diversi ambiti di applicazione del progetto di comunicazione.
+	ISIA Parade è anche l’occasione per riunire la comunità ISIA Urbino. Quest’anno l’evento va online con un nuovo format streaming che raccoglie showcase di progetti, interviste, playlist e molto altro.
+	      
+	    </div>
+	    <div class="colophon" >
+	      <div class="sx">
+	        ISIA Urbino
+	        <br>
+	        <br>
+	        Istituto Superiore per<br> 
+	        le Industrie Artistiche
+	        <br>
+	        <br>
+	        Via S. Chiara 36<br>
+	        61029 Urbino
+	      </div>
+
+	      <div class="sx"> 
+	        Colophon
+	        <br>
+	        <br>
+	        Direttore<br>
+	        Jonathan Pierini<br>
+	        <br>
+	        
+	        Team comunicazione
+	        <br>
+	        <br>
+	        Tutor<br>
+	        Francesco Delrosso<br>
+	        Filippo Emiliani<br>
+	        
+	        <br>
+	        Studentesse/studenti<br>
+	        Davide Catena<br>
+	        Andrea Cecconi<br>
+	        Nicola Di Giorgio<br>
+	        Gloria Favaro<br>
+	        Fabio Maragno<br>
+	        Diego Massaro<br>
+	        Nicola Narbone<br>
+	        Marco Pagan<br>
+	        Carlo Andrea Schlatter
+	        
+	      </div>
+	    </div>
+
+	    <div class="sxx"></div>
+
+	</div>
+
+</body>
+<!--CLOSE BODY-->
+
+<script>
+
+  mybutton = document.getElementById("myBtn");
+  function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
+  //SCRIPT TO REFRESH COLORS
+  function refreshColors(){
+  	if (document.body.style.backgroundColor === "white") {
+    	document.body.style.backgroundColor = "black";
+    	document.getElementById("header").style.color = "white";
+    	//document.getElementById("box").style.backgroundColor = "red";
+    	return;
+    } if (document.body.style.backgroundColor === "black") {
+    	document.body.style.backgroundColor = "red";
+    	document.getElementById("header").style.color = "blue";
+    	return;
+    } if (document.body.style.backgroundColor === "red") {
+    	document.body.style.backgroundColor = "green";
+    	document.getElementById("header").style.color = "lightBlue";
+    	return;
+    } if (document.body.style.backgroundColor === "green") {
+    	document.body.style.backgroundColor = "orange";
+    	document.getElementById("header").style.color = "rgb(60, 58, 58)";
+    	return;
+    } if (document.body.style.backgroundColor === "orange") {
+    	document.body.style.backgroundColor = "white";
+    	document.getElementById("header").style.color = "rgb(30, 28, 28)";
+    	return;
+    }
+  }
+
+  //SCRIPT AMIR
+  //THIS RETRIEVES FILES FROM GOOGLE DRIVE
+  const isAudio = (file) => {
+    return file.metadata.mimeType.indexOf("audio/") > -1;
+  }
+
+  function createAudioElement(file, whatToAppendTo) {
+    const audioElement = document.createElement("audio");
+
+    audioElement.setAttribute("controls", "true");
+    audioElement.setAttribute("controlsList", "nodownload");
+
+    file.content.urls.forEach(urlObj => {
+      const sourceElement = document.createElement("source");
+      sourceElement.src = urlObj.url;
+      sourceElement.type = urlObj.format.type;
+
+      audioElement.append(sourceElement);
+
+    })
+
+    whatToAppendTo.prepend(audioElement);
+  }
+
+  const isImage = (file) => {
+    return file.metadata.mimeType.indexOf("image/") > -1;
+  }
+
+  function createGifElement( image, whatToAppendTo){
+
+    const imgContainer = document.createElement("img");
+    imgContainer.className = "image-container";
+    imgContainer.style.marginTop = "5px";
+    const imageUrl = image.content.responsiveUrls[0] + ".gif";
+    imgContainer.src = imageUrl;
+    const titleElement = document.createElement("p");
+    titleElement.className = "didascaliaLast";
+    titleElement.style.marginTop = "0px";
+
+    if (image.content.title == "FuoriDiSegno_1") {
+      titleElement.innerHTML = "<i>Fuori d—segno </i>Progetto di classe 2 anno MA Illustrazione";
+    }
+
+    whatToAppendTo.append(imgContainer);
+    whatToAppendTo.append(titleElement);
+
+  }
+
+  function createImageElement( image, whatToAppendTo){
+
+    const imgContainer = document.createElement("img");
+    imgContainer.className = "image-container";
+    imgContainer.style.marginTop = "5px";
+    imgContainer.style.marginBottom = "0px";
+
+    const imageUrl = image.content.responsiveUrls[1] + ".jpg";
+
+    imgContainer.src = imageUrl;
+
+    const titleElement = document.createElement("p");
+    titleElement.className = "didascalia";
+    titleElement.style.marginTop = "5px";
+
+    if (image.content.title == "UP_1") {
+      titleElement.innerHTML = "I tre manifesti realizzati per l'evento.";
+    }
+
+    whatToAppendTo.append(imgContainer);
+    whatToAppendTo.append(titleElement);
+
+  }
+
+</script>
+
+<script language="javascript" type="text/javascript" src="js/time.js"></script>
+
+</html>
