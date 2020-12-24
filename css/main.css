@@ -1,0 +1,664 @@
+@font-face{
+  font-family: 'Archivo Narrow', sans-serif;
+  /*font-family: 'Archivo Narrow', serif;
+    src: url('css/ZillaSlab-Regular.ttf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;*/
+}
+
+html{
+  overflow: auto;
+}
+
+body{
+  margin: 0;
+  /*overflow: hidden*/;
+}
+
+#main{
+  top: 27vw;
+  width: 100%;
+  height: 87vh;
+  position: fixed;
+}
+
+#header {
+  font-family: 'Archivo Narrow';
+  /*position: fixed;*/
+  top: 0;
+  float: left;
+  padding: 0px;
+  text-align: left;
+  border: 1px solid rgb(30, 28, 28);
+  height: 16vw;
+  z-index: 1;
+  /*border-style: hidden hidden solid hidden;*/
+  border-style: hidden;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.refreshButton {
+
+  z-index: 1;
+  margin-top: 15%;
+  margin-left: 62%;
+  width: 20%;
+  position: absolute;
+  overflow: hidden;
+  float: right;
+  top: 20px;
+  animation: rotation 6s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.leftName {
+  /*font-size: 9vw;*/
+  /*font-weight: bold;*/
+  font-size: 14vw;
+  font-weight: bold;
+  line-height: 110%;
+  margin-top: 20px;
+  float: left;
+}
+
+.rightName {
+  font-size: 9vw;
+  float: left;
+  color: rgb(237, 109, 45);
+  padding-right: 10px;
+}
+
+
+.underName {
+  font-size: 3.8vw;
+  float: left;
+  padding: 2.5px;
+  margin-top: -3.6vw;
+  margin-bottom: -50px;
+}
+
+#about.underName {
+  width: 25%;
+  text-align: right;
+  float: right;
+}
+
+#date{
+  font-family: 'Archivo Narrow';
+  position: fixed;
+  top:16vw;
+  width:100%;
+  height: 11vw;
+}
+
+#day22{
+  font-size: 8.6vw;
+  float: left;
+  width: 33.3%;
+  text-align: left;
+  padding-left: 15px; 
+  padding-bottom: 5px;
+  margin: 0px;
+}
+
+#day23{
+  font-size: 8.6vw;
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  margin: 0px;
+  padding-bottom: 5px;
+}
+#day24{
+  font-size: 8.6vw;
+  float: left;
+  width: 33.3%;
+  text-align: right;
+  padding-right: 15px; 
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
+.panel_info {
+  font-family: 'Archivo Narrow';
+  padding: 0 0px;
+  background-color: rgba(230, 230, 230);
+  border: 1px solid rgb(30, 28, 28);;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 0px;
+  transition: 0s;
+}
+
+
+.panel_event {
+  font-family: 'Archivo Narrow';
+  padding: 0 0px;
+  background-color: white;
+  border: 1px solid rgb(30, 28, 28);;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 0px;
+  transition: 0.4s;
+}
+
+#mainpanel{
+  background-color: rgb(30, 28, 28);;
+}
+
+.inside{
+      font-family: 'Archivo Narrow';
+      padding: 0 0 0 0px;
+      border: 0px solid rgb(30, 28, 28);;
+      font-size: 4vw;
+      margin: 0px;
+      height: 0px;
+    }
+
+.gallery{
+  /*height: 800px;*/
+  overflow-y: overlay;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+}
+
+.about {
+  background-color: #fff;
+  color: rgb(30, 28, 28);;
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid white;
+ /*border-radius: 5px;*/
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  outline: none;
+  transition: 0.4s;
+  height: 30px;
+  font-size: 30px;
+  border-style: solid hidden hidden hidden;
+  border: 1px solid rgb(30, 28, 28);;
+
+}
+
+@keyframes slideleft {
+  from { background-position: 0%; }
+  to { background-position: 90000%; }
+}
+
+/* .about {
+  background-image: url("Fascia.jpg"); //PER EVENTUALE MARQUEE
+  background-size: cover;
+  background-repeat: repeat-x;
+  animation: slideleft 1000s infinite linear;
+} */
+
+#insidefirst{
+  font-family: 'Archivo Narrow';
+  padding: 0 0 0 10px;
+  height: 10vh;
+  /*border-radius: 5px;*/
+  border-top: 1px solid rgb(30, 28, 28);;
+  text-align: left;
+  font-size: 30px;
+}
+
+.panel {
+  font-family: 'Archivo Narrow';
+  padding: 0 0px;
+  background-color: white;
+  display: none;
+  border-left: 0px solid rgb(30, 28, 28);;
+  border-right: 0px solid white;
+  /*border-radius: 5px;*/
+  overflow: hidden;
+}
+
+p {
+  font-family: 'Archivo Narrow';
+  padding: 0 0%;
+  font-size: 25px;
+}
+
+
+
+#insidepanel{
+  border:1px solid rgb(30, 28, 28);;
+}
+
+#Mercoledì, #Giovedì, #Venerdì {
+  border-top: 1px solid rgb(30, 28, 28);;
+  width: 33.1%;
+  border-right: 1px solid white;
+  border-left: 1px solid rgb(30, 28, 28);;
+}
+
+#Archive{
+  border-bottom: 3px solid rgb(30, 28, 28);;
+  border-top: 2px solid white;
+  border-left: 0px solid white;
+}
+
+#Live{
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  border-left: 1px solid rgb(30, 28, 28);;
+}
+
+audio {
+width: 98%;
+margin: 0% 1% 1% 1%;
+}
+
+audio:focus{
+outline:none;
+}
+
+.livemain_22{
+
+  font-family: 'Archivo Narrow';
+  /*background-color: rgb(255,255,255);*/
+  margin-bottom: 10px;
+  width: 100%;
+  height: 78vh;
+  font-size: 3vw;
+  text-align: left;
+  padding: 10px;
+  padding-top: 0px;
+  border: 0px solid red;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.livemain_23{
+
+  font-family: 'Archivo Narrow';
+  /*background-color: rgb(255,255,255);*/
+  
+  margin-bottom: 10px;
+  width: 100%;
+  height: 78vh;
+  font-size: 3vw;
+  text-align: left;
+  padding: 10px;
+  padding-top: 0px;
+  border: 0px solid red;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.livemain_24{
+
+  font-family: 'Archivo Narrow';
+  /*background-color: rgb(255,255,255);*/
+  
+  margin-bottom: 20px;
+  width: 100%;
+  height: 78vh;
+  font-size: 3vw;
+  text-align: left;
+  padding: 10px;
+  padding-top: 0px;
+  border: 0px solid red;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.listElement{
+  border: 1px solid rgb(30, 28, 28);;
+  transition-duration: 0.5s;
+}
+
+th {
+  font-family: 'Archivo Narrow';
+  font-weight: normal;
+  padding:2.5px;
+  padding-bottom:3px;
+}
+
+.eventBox{
+  height: 18vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eventDate{
+  font-size: 3.5vw;
+  color: white;
+  text-align: left;
+  width: 100%;
+  height: 2.5vw;
+}
+
+.eventName{
+  font-size: 6vw;
+  text-align: left;
+  line-height: 7vw;
+  padding-top: 5px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
+audio{
+  margin-top: -5px;
+  margin-bottom: 25px;
+}
+
+img{
+  width: 100%;
+}
+
+.didascalia_autori{
+  font-size: 3.2vw;
+  text-align: left;
+  margin-left: 6.5px;
+  margin-right: 6px;
+  margin-bottom: 5px;
+  line-height: 3.6vw;
+}
+
+.didascalia{
+  font-size: 3.2vw;
+  text-align: left;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 0px;
+  margin-bottom: 7.5px;
+  line-height: 3.6vw;
+}
+
+.didaUrl{
+  font-size: 3vw;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: -5px;
+  margin-bottom: 7.5px;
+}
+
+.didascaliaLast{
+  font-size: 3.2vw;
+  text-align: left;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  line-height: 3.6vw;
+}
+
+.unavailable{
+  color: rgb(178, 180, 182);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    color: rgb(30, 28, 28);;
+    background: transparent; /* make scrollbar transparent */
+}
+
+selector::-webkit-scrollbar { display:none }
+
+#footer{
+  font-family: 'Archivo Narrow';  
+  float:left;
+  position: absolute;
+  z-index: 3;
+  overflow:scroll;
+  top:200vh;
+  margin-top: 1000px;
+  height:80vh;
+  background-color: rgb(30, 28, 28); 
+  padding: 10px;
+  padding-left: 13px;
+  padding-bottom: 0px;
+  }
+
+
+.colophon{
+  width: 100%;  
+  float: left;
+  color: rgb(178, 180, 182);
+}
+.sx {
+  margin-top: 20px;
+  width: 45%;
+  float: left;
+  position: relative;
+  font-size:3.2vw;
+  line-height:3.6vw; 
+
+}
+
+.sxx{
+  width: 10%;
+
+}
+
+.about_colophon {
+  font-size: 4.1vw;
+  line-height: 4.3vw;
+  width: 100%;
+  float: left;
+  color: rgb(178, 180, 182);
+}
+
+#mark{
+  font-family: 'Archivo Narrow';
+  position: fixed;
+  width: 100%;
+  float: left;
+  bottom: 0px;
+}
+
+.marque{
+  font-size: 6vw; 
+  height: 60px; 
+  border-style: solid hidden hidden hidden;
+  border-width: 1px;
+  background-color: white;
+  padding-top: 10px;
+  margin-bottom: -5px;
+}
+
+.marque a{
+  text-decoration: none;
+  padding-right: 120px;
+}
+
+/*MEDIA QUERY*/
+/*@media screen and (min-width: 600px)*/
+@media (min-width: 600px) {
+
+  .leftName {
+    /*font-size: 9vw;*/
+    /*font-weight: bold;*/
+    font-size: 9vw;
+  }
+
+  #footer{
+    float:left;
+    position: absolute;
+    z-index: 3;
+    overflow:scroll;
+    top:120vh;
+    margin-left: -13px;
+    margin-right: 0px;
+    height:53vh;
+    background-color: rgb(30, 28, 28); 
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+
+  .colophon{
+    width: 33%;
+    height: 100%;
+    
+    float: left;
+    color: rgb(178, 180, 182);
+  }
+
+  .sx {  
+    width: 45%;
+    float: left;
+    position: relative;
+    font-size:1vw;
+    line-height:1.15vw; 
+    margin-top: 13px;
+  }
+
+  .sxx{
+    width: 10%;
+  }
+
+  .about_colophon {
+    font-size: 2vw;
+    line-height: 2.26vw;
+    width: 66.6%;
+    height: 100%;
+    float: right;
+    padding-right: 31px;
+    color: rgb(178, 180, 182);
+  }
+
+  #main{
+    top: 11vw;
+    width: 100%;
+    height: 91vh;
+    position: fixed;
+  }
+
+  body{
+    padding-left: 6px;
+  }
+
+  .gifz{
+    margin:-13px;
+  }
+  #header {
+    height: 7vw;
+    width: 97.7vw;
+  }
+
+  .underName {
+    font-size: 1vw;
+    padding-top: 2.5vw;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  .gallery{
+    margin-bottom: -5px;
+    justify-content:center;
+    align-items:center;
+     margin-top:5px;
+  }
+
+  .didascaliaLast{
+    font-size: 1vw;
+    text-align: left;
+    margin-left: 6px;
+    margin-right: 5px;
+    margin-top: 0px; /* ??? qui prima era -5px*/
+    margin-bottom: 15px;
+    line-height: 1.15vw;
+  }
+
+  #mark{
+    font-family: 'Archivo Narrow';
+    position: fixed;
+    top: 94vh;
+    width: 100%;
+    float: left;
+    margin-left: -6px;
+  }
+
+  .marque{
+    font-size: 2vw; 
+    height: 100px; 
+    border-style: solid hidden hidden hidden;
+    border-width: 1px;
+    background-color: white;
+    padding-top: 0px; 
+  }
+  
+}
+
+/* MEDIA QUERY SOLO PER HEADER */
+
+@media (max-width: 600px) {
+}
+
+@media (min-width: 1383px) {
+
+  #footer{
+    float:left;
+    position: absolute;
+    z-index: 3;
+    overflow:scroll;
+    top:120vh;
+    margin-left: -13px;
+    margin-right: 0px;
+    height:53vh;
+    background-color: rgb(30, 28, 28); 
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+  
+
+  .colophon{
+    width: 33%;
+    height: 100%;
+    float: left;
+    color: rgb(178, 180, 182);
+  }
+
+  .sx {
+    width: 40%;
+    float: left;
+    position: relative;
+    font-size:1.1vw;
+    line-height:1.1vw; 
+    margin-top: 13px;
+  }
+
+  .sxx{
+    width: 20%;
+  }
+
+  .about_colophon {
+    font-size: 1.8vw;
+    line-height: 2.15vw;
+    width: 66.6%;
+    height: 100%;
+    float: right;
+    padding-right: 31px;
+    color: rgb(178, 180, 182);
+  }
+}
