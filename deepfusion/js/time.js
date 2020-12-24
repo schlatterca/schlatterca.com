@@ -35,10 +35,20 @@ function afterDusk(){
     var duskHour = res.results.sunset.split(':')[0];
     var duskMinute = res.results.sunset.split(':')[1].split(':')[0];
     
-    if ((hour >= (parseInt(duskHour)+13) && minute >= duskMinute)||(hour <= (parseInt(dawnHour)+1) && minute <= dawnMinute)){
-      //console.log(hour);
+    if(((hour > (parseInt(duskHour)+13))||
+      ((hour == (parseInt(duskHour)+1))&&(minute >= (parseInt(duskMinute)))))||
+      ((hour < (parseInt(dawnHour)+1))||
+      ((hour == (parseInt(dawnHour)+1))&&(minute >= (parseInt(dawnMinute)))))){
+      /*console.log(hour);
+      console.log(minute);
+      console.log(duskHour);
+      console.log(duskMinute);
+      console.log(dawnHour);
+      console.log(dawnMinute);*/
       document.getElementsByClassName("container")[0].children[0].setAttribute("style", "text-decoration: none; color: rgb(255,255,255); display: inline;");
     } else {
+      console.log(hour);
+      console.log(parseInt(duskHour)+13);
       document.getElementsByClassName("container")[0].children[0].removeAttribute("href");
       document.getElementsByClassName("container")[0].children[0].setAttribute("style", "text-decoration: none; color: rgb(255,255,255); display: inline;");
       document.getElementsByClassName("background")[0].style.animation = "opacityChange_bi 10s normal forwards";
@@ -50,5 +60,5 @@ function afterDusk(){
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].style.color = "rgb(30,50,135)";
       document.getElementsByClassName("container")[0].children[0].getElementsByClassName("descript")[0].style.animation = "opacityChange_bi 10s normal forwards";
     }
-  })();
+  })(); 
 }
