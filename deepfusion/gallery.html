@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="dist/default-skin/default-skin.css">
         <link rel="stylesheet" href="css/gallery.css">
         <link rel="stylesheet" href="css/site.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        <script src="dist/photoswipe.min.js"></script>
-        <script src="dist/photoswipe-ui-default.min.js"></script>
+        <link rel="shortcut icon" type="image/png" href="https://github.com/schlatterca/schlatterca.com/blob/main/favicon.png?raw=true">
+        <script src="dist/photoswipe.js"></script>
+        <script src="dist/photoswipe-ui-default.js"></script>
 
         <title>Deep Fusion</title>
         <style type="text/css">
@@ -353,7 +353,7 @@
                         realViewportWidth = gallery.viewportSize.x * dpiRatio;
 
 
-                        if(realViewportWidth >= 1200 || (!gallery.likelyTouchDevice && realViewportWidth > 800) || screen.width > 1200 ) {
+                        /*if(realViewportWidth >= 1200 || (!gallery.likelyTouchDevice && realViewportWidth > 800) || screen.width > 1200 ) {
                             if(!useLargeImages) {
                                 useLargeImages = true;
                                 imageSrcWillChange = true;
@@ -364,7 +364,8 @@
                                 useLargeImages = false;
                                 imageSrcWillChange = true;
                             }
-                        }
+                        }*/
+                        useLargeImages = true; /*edited this ###*/ 
 
                         if(imageSrcWillChange && !firstResize) {
                             gallery.invalidateCurrItems();
@@ -383,7 +384,7 @@
                             item.src = item.o.src;
                             item.w = item.o.w;
                             item.h = item.o.h;
-                        } else {
+                        } else { /* ??? */
                             item.src = item.m.src;
                             item.w = item.m.w;
                             item.h = item.m.h;
