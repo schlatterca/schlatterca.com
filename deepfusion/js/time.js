@@ -36,9 +36,9 @@ function afterDusk(){
     var duskMinute = res.results.sunset.split(':')[1].split(':')[0];
     
     if(((hour > (parseInt(duskHour)+13))||
-      ((hour == (parseInt(duskHour)+1))&&(minute >= (parseInt(duskMinute)))))||
+      ((hour == (parseInt(duskHour)+13))&&(minute >= (parseInt(duskMinute)))))||
       ((hour < (parseInt(dawnHour)+1))||
-      ((hour == (parseInt(dawnHour)+1))&&(minute >= (parseInt(dawnMinute)))))){
+      ((hour == (parseInt(dawnHour)+1))&&(minute <= (parseInt(dawnMinute)))))){
       /*console.log(hour);
       console.log(minute);
       console.log(duskHour);
