@@ -1,19 +1,25 @@
 let count = 1;
 let colorCount = 1;
-let projectCount = 1;
+let projectCount = 0;
 let opac_2 = 1;
 let opac_3 = 1;
 let opac_4 = 1;
 
 let root = document.documentElement;
 
+var descriz_carlo = "Ciao! Sono Carlo Andrea, studio progettazione grafica<br>"
+					+"e comunicazione visiva. Ho tanti interessi, dormo poco,<br>"
+					+"lavoro come freelancer per design digitale e cartaceo.<br>"
+					+"Credo fermamente che, con le giuste quantità di tempo<br>"
+					+"e di Coca-Cola, sia possibile fare qualunque cosa.<br>"
+					+"Questo sito, ad esempio, mi è costato nove Coca-Cole."
 var descriz_parade = "Showcase online per ISIA U con podcast, immagini,<br>"
 					+"video e materiale raccolto da professori e studenti.<br>"
 					+"Durante i tre giorni di durata dell'evento, uno script<br>"
 					+"rendeva disponibili nuovi materiali ogni ora."
 var descriz_deepfu = "Il progetto fotografico raccoglie esperimenti e ricerche<br>"
-					+"su Deep Fusion, software sviluppato da Apple nel 2019<br>"
-					+"per migliorare le fotografie scattate al buio con iPhone.<br>"
+					+"su Deep Fusion, software Apple sviluppato nel 2019<br>"
+					+"per migliorare le immagini catturate al buio da iPhone.<br>"
 					+"La mostra virtuale è aperta dal tramonto all'alba."
 var descriz_urbesp = "Guida turistica non convenzionale alle infrastrutture<br>"
 					+"telecomunicative di Urbino: tutto il centro storico<br>"
@@ -27,6 +33,10 @@ var descriz_unconv = "Progetto di ricerca ispirato dai temi dell’Agenda ONU<br
 					+"2030 sul pubblico accesso all’informazione. Una guida<br>"
 					+"all’uso non convenzionale di Internet, tra easter egg<br>"
 					+"e cifrari, al fine di sviluppare le propria libertà online."
+var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
+					+"dei lungometraggi d’animazione dello studio Ghibli,<br>"
+					+"questo carattere morbido come Totoro e scoppiettante<br>"
+					+"come Calcifer è dedicato al grande Hayao Miyazaki."
 
 /*var nome = ["Schlatter Carlo Andrea", "@schlatterca su Instagram", 
                 "Carlito Andreito e poi Schlatterito", "Anche detto Andrea Carlo",
@@ -75,8 +85,8 @@ var colori = ["rgb(30,140,255,.8)", "rgb(150,55,155,.8)",
 				"rgb(225,55,55,.8)", "rgb(245,130,0,.8)",
 				"rgb(255,185,0,.8)", "rgb(95,190,60,.8)"]
 var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
-				"Unconventional Posting", "Via Pascucci Spazio 14"
-				/*"Hayao Typeface",
+				"Unconventional Posting", "Via Pascucci Spazio 14",
+				"Hayao Typeface"
 				/*"Dorli Typeface", "Filtri RA x Studio Dallas",*/]
 
 //START PUSHBUTTON
@@ -95,7 +105,7 @@ function pushButton_1() {
     }, 300);
 
     if (document.getElementsByClassName("nome")[0].innerHTML == "Carlo Andrea Schlatter") {
-		document.getElementsByClassName("nome")[0].style.background = "rgb(30,140,255,.8)";
+		document.getElementsByClassName("nome")[0].style.background = "--mainColor";
 	} else {
 		document.getElementsByClassName("nome")[0].style.background = "rgb(80, 215, 105,.8)";
 	}
@@ -150,10 +160,21 @@ function pushButton_4() {
 		document.getElementsByClassName("activity")[0].style.background = "rgb(80, 215, 105,.8)";
 	}
 }
-//END PUSHBUTTON
 
-function loadOpacity() {
-	document.getElementById("underName").children[0].innerHTML = projects[Math.floor(Math.random() * projects.length)];
+function pushButton_proj() {
+	document.getElementById("underName").children[0].innerHTML = projects[projectCount];
+
+	if (projectCount < projects.length-1) {
+		projectCount += 1;
+	} else {
+		projectCount = 0;
+	}
+
+	document.getElementById("underName").classList.add("rotation");
+    setTimeout(function() {
+        document.getElementById("underName").classList.remove("rotation");
+    }, 300);
+	
 	if (document.getElementById("underName").children[0].innerHTML == "Parade 2020") {
 		root.style.setProperty('--gifUrl', "url('../img/PA.gif')")
 		document.getElementById("underName").children[0].href = "http://www.progetti-isiau.net/parade2020";
@@ -179,9 +200,22 @@ function loadOpacity() {
 		document.getElementById("underName").children[0].href = "https://unconv-posting.com/";
 		document.getElementById("underName").children[1].innerHTML = descriz_unconv;
 	
+	} else if (document.getElementById("underName").children[0].innerHTML == "Hayao Typeface"){
+		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Gif_Unconv_4fps.gif')")
+		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/B_pYEQUIxpE/";
+		document.getElementById("underName").children[1].innerHTML = descriz_hayao;
+	
 	} else {
 		root.style.setProperty('--gifUrl', "url('https://www.verdict.co.uk/wp-content/uploads/2017/09/giphy-downsized-large.gif')")
 	}
+}
+//END PUSHBUTTON
+
+function loadOpacity() {
+
+	projects = projects.sort(() => Math.random() - 0.5)
+	projectCount += Math.floor(Math.random() * projects.length);
+	pushButton_proj();
 
 	document.getElementsByClassName("nome")[0].classList.add("makeAppear_1");
 	setTimeout(function() {
@@ -223,9 +257,22 @@ function changeColors() {
 	}
 }
 
+function moreInfo() {
+	if (document.getElementsByClassName("infoClose")[0].classList.contains("infoOpen")){
+		document.getElementsByClassName("infoClose")[0].classList.remove("infoOpen");
+		document.getElementsByClassName("infoClose")[0].innerHTML = "💬";
+	} else {
+		document.getElementsByClassName("infoClose")[0].classList.add("infoOpen");
+		document.getElementsByClassName("infoClose")[0].innerHTML = descriz_carlo;
+	}
+}
+
 function checkIfRap() {
 	//EASTER EGG RAP
 	if ((document.getElementsByClassName("impiego")[0].innerHTML == "grande fan di Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "all’ascolto di rap italiano")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
 		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
+		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
+	} else {
+		root.style.setProperty('--mainColor', colori[colorCount-1])
 	}
 }
