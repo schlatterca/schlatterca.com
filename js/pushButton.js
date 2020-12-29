@@ -7,6 +7,27 @@ let opac_4 = 1;
 
 let root = document.documentElement;
 
+var descriz_parade = "Showcase online per ISIA U con podcast, immagini,<br>"
+					+"video e materiale raccolto da professori e studenti.<br>"
+					+"Durante i tre giorni di durata dell'evento, uno script<br>"
+					+"rendeva disponibili nuovi materiali ogni ora."
+var descriz_deepfu = "Il progetto fotografico raccoglie esperimenti e ricerche<br>"
+					+"su Deep Fusion, software sviluppato da Apple nel 2019<br>"
+					+"per migliorare le fotografie scattate al buio con iPhone.<br>"
+					+"La mostra virtuale è aperta dal tramonto all'alba."
+var descriz_urbesp = "Guida turistica non convenzionale alle infrastrutture<br>"
+					+"telecomunicative di Urbino: tutto il centro storico<br>"
+					+"è stato mappato, fotografato e ripensato come meta<br>"
+					+"di un Internet Tour con l'artista Mario Santamaría."
+var descriz_viapas = "Per questo negozio di arredamenti e oggettistica<br>"
+					+"ho impostato comunicazione e presenza su Internet,<br>"
+					+"dai biglietti da visita alla configurazione dello shop<br>"
+					+"online su sito, Instagram e Facebook Marketplace."
+var descriz_unconv = "Progetto di ricerca ispirato dai temi dell’Agenda ONU<br>"
+					+"2030 sul pubblico accesso all’informazione. Una guida<br>"
+					+"all’uso non convenzionale di Internet, tra easter egg<br>"
+					+"e cifrari, al fine di sviluppare le propria libertà online."
+
 /*var nome = ["Schlatter Carlo Andrea", "@schlatterca su Instagram", 
                 "Carlito Andreito e poi Schlatterito", "Anche detto Andrea Carlo",
                 "Scachler, Sacher, Screecher, dai lui", "Anche detto Swiss Army Man",
@@ -32,7 +53,7 @@ var impiego = ["studente di Graphic Design", "copywriter freelance<br>per belle 
 var rightnow = ["ISIA Urbino, Italia", "laureato in Filosofia<br>all'Università di Bologna",
 				"viene da Gambettola,<br>Forlì-Cesena", "è in viaggio verso est",
 				"è al lavoro sul suo sito", "sta giocando a Metal Slug",
-				"immerso in un libro triste", "all'ascolto di rap italiano",
+				"immerso in un libro triste", "all’ascolto di rap italiano",
 				"sta facendo esercizi<br>di ginnastica ritmica", "sta soffiando il vetro",
 				"sta costruendo un mobile<br>in legno massello", "è in una chat con il bot<br>di Steve Jobs",
 				"nel mezzo di un film d’azione", "ha appena vinto la lotteria",
@@ -54,15 +75,12 @@ var colori = ["rgb(30,140,255,.8)", "rgb(150,55,155,.8)",
 				"rgb(225,55,55,.8)", "rgb(245,130,0,.8)",
 				"rgb(255,185,0,.8)", "rgb(95,190,60,.8)"]
 var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
-				"Filtri RA x Studio Dallas", "Hayao Typeface",
-				"Dorli Typeface", "Via Pascucci Spazio 14",
-				"Unconventional Posting"]
+				"Unconventional Posting", "Via Pascucci Spazio 14"
+				/*"Hayao Typeface",
+				/*"Dorli Typeface", "Filtri RA x Studio Dallas",*/]
 
+//START PUSHBUTTON
 function pushButton_1() {
-	/*red += 50;
-	green -= 20;
-	document.getElementsByClassName("nome")[0].style = "color: rgb(" + red + "," + green + ",0)";*/
-
 	document.getElementsByClassName("nome")[0].innerHTML = nome[count];
 
 	if (count < nome.length-1) {
@@ -97,6 +115,8 @@ function pushButton_2() {
 	} else {
 		document.getElementsByClassName("impiego")[0].style.background = "rgb(80, 215, 105,.8)";
 	}
+
+	checkIfRap();
 }
 
 function pushButton_3() {
@@ -112,6 +132,8 @@ function pushButton_3() {
 	} else {
 		document.getElementsByClassName("rightnow")[0].style.background = "rgb(80, 215, 105,.8)";
 	}
+
+	checkIfRap();
 }
 
 function pushButton_4() {
@@ -128,20 +150,38 @@ function pushButton_4() {
 		document.getElementsByClassName("activity")[0].style.background = "rgb(80, 215, 105,.8)";
 	}
 }
+//END PUSHBUTTON
 
 function loadOpacity() {
 	document.getElementById("underName").children[0].innerHTML = projects[Math.floor(Math.random() * projects.length)];
 	if (document.getElementById("underName").children[0].innerHTML == "Parade 2020") {
 		root.style.setProperty('--gifUrl', "url('../img/PA.gif')")
+		document.getElementById("underName").children[0].href = "http://www.progetti-isiau.net/parade2020";
+		document.getElementById("underName").children[1].innerHTML = descriz_parade;
+	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Deep Fusion"){
 		root.style.setProperty('--gifUrl', "url('https://digitazon.com/wp-content/uploads/2020/05/60f6e7294309c3ec67855e35eb1912da.gif')")
+		document.getElementById("underName").children[0].href = "https://schlatterca.com/deepfusion/index.html";
+		document.getElementById("underName").children[1].innerHTML = descriz_deepfu;
+	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Urbino Esposta"){
 		root.style.setProperty('--gifUrl', "url('https://lh3.googleusercontent.com/proxy/EgYmobsn4jM30I84CZ809RzRVCuOYmEHnUdXSIEBt6Xvg2zEOka6SFoyybemb8mWgod1xfrKkSLrEauN_rZye6Tx2YgHLTr7GvHx7AI1uaaDFn0Y8E0c5tt63SVgFCc')")
+		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/CInX92VB4vD/";
+		document.getElementById("underName").children[1].innerHTML = descriz_urbesp;
+	
+	} else if (document.getElementById("underName").children[0].innerHTML == "Via Pascucci Spazio 14"){
+		root.style.setProperty('--gifUrl', "url('https://lh3.googleusercontent.com/proxy/EgYmobsn4jM30I84CZ809RzRVCuOYmEHnUdXSIEBt6Xvg2zEOka6SFoyybemb8mWgod1xfrKkSLrEauN_rZye6Tx2YgHLTr7GvHx7AI1uaaDFn0Y8E0c5tt63SVgFCc')")
+		document.getElementById("underName").children[0].href = "https://www.vp-spazio14.com/";
+		document.getElementById("underName").children[1].innerHTML = descriz_viapas;
+
+	} else if (document.getElementById("underName").children[0].innerHTML == "Unconventional Posting"){
+		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Gif_Unconv_4fps.gif')")
+		document.getElementById("underName").children[0].href = "https://unconv-posting.com/";
+		document.getElementById("underName").children[1].innerHTML = descriz_unconv;
+	
 	} else {
 		root.style.setProperty('--gifUrl', "url('https://www.verdict.co.uk/wp-content/uploads/2017/09/giphy-downsized-large.gif')")
 	}
-
-
 
 	document.getElementsByClassName("nome")[0].classList.add("makeAppear_1");
 	setTimeout(function() {
@@ -180,5 +220,12 @@ function changeColors() {
 		colorCount += 1;
 	} else {
 		colorCount = 0;
+	}
+}
+
+function checkIfRap() {
+	//EASTER EGG RAP
+	if ((document.getElementsByClassName("impiego")[0].innerHTML == "grande fan di Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "all’ascolto di rap italiano")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
+		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
 	}
 }
