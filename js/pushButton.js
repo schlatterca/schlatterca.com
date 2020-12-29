@@ -12,14 +12,15 @@ var descriz_carlo = "Ciao! Sono Carlo Andrea, studio progettazione grafica<br>"
 					+"lavoro come freelancer per design digitale e cartaceo.<br>"
 					+"Credo fermamente che, con le giuste quantità di tempo<br>"
 					+"e di Coca-Cola, sia possibile fare qualunque cosa.<br>"
-					+"Questo sito, ad esempio, mi è costato nove Coca-Cole."
+					+"Questo sito, ad esempio, mi è costato nove Coca-Cole.<br>"
+					+"Tocca il mio nome in alto per vedere i miei contatti!"
 var descriz_parade = "Showcase online per ISIA U con podcast, immagini,<br>"
 					+"video e materiale raccolto da professori e studenti.<br>"
 					+"Durante i tre giorni di durata dell'evento, uno script<br>"
 					+"rendeva disponibili nuovi materiali ogni ora."
 var descriz_deepfu = "Il progetto fotografico raccoglie esperimenti e ricerche<br>"
 					+"su Deep Fusion, software Apple sviluppato nel 2019<br>"
-					+"per migliorare le immagini catturate al buio da iPhone.<br>"
+					+"per migliorare le immagini scattate al buio da iPhone.<br>"
 					+"La mostra virtuale è aperta dal tramonto all'alba."
 var descriz_urbesp = "Guida turistica non convenzionale alle infrastrutture<br>"
 					+"telecomunicative di Urbino: tutto il centro storico<br>"
@@ -105,9 +106,10 @@ function pushButton_1() {
     }, 300);
 
     if (document.getElementsByClassName("nome")[0].innerHTML == "Carlo Andrea Schlatter") {
-		document.getElementsByClassName("nome")[0].style.background = "--mainColor";
+		document.getElementsByClassName("nome")[0].style.background = "var(--mainColor)";
+		console.log(root);
 	} else {
-		document.getElementsByClassName("nome")[0].style.background = "rgb(80, 215, 105,.8)";
+		document.getElementsByClassName("nome")[0].style.background = "rgb(100, 230, 120,.8)";
 	}
 
 }
@@ -121,9 +123,9 @@ function pushButton_2() {
 		}, 300);
 
 	if (document.getElementsByClassName("impiego")[0].innerHTML == "studente di Graphic Design") {
-		document.getElementsByClassName("impiego")[0].style.background = "rgb(30,140,255,.8)";
+		document.getElementsByClassName("impiego")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("impiego")[0].style.background = "rgb(80, 215, 105,.8)";
+		document.getElementsByClassName("impiego")[0].style.background = "rgb(100, 230, 120,.8)";
 	}
 
 	checkIfRap();
@@ -138,9 +140,9 @@ function pushButton_3() {
 		}, 300);
 
 	if (document.getElementsByClassName("rightnow")[0].innerHTML == "ISIA Urbino, Italia") {
-		document.getElementsByClassName("rightnow")[0].style.background = "rgb(30,140,255,.8)";
+		document.getElementsByClassName("rightnow")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("rightnow")[0].style.background = "rgb(80, 215, 105,.8)";
+		document.getElementsByClassName("rightnow")[0].style.background = "rgb(100, 230, 120,.8)";
 	}
 
 	checkIfRap();
@@ -155,9 +157,9 @@ function pushButton_4() {
 		}, 300);
 
 	if (document.getElementsByClassName("activity")[0].innerHTML == "tra i suoi ultimi lavori:") {
-		document.getElementsByClassName("activity")[0].style.background = "rgb(30,140,255,.8)";
+		document.getElementsByClassName("activity")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("activity")[0].style.background = "rgb(80, 215, 105,.8)";
+		document.getElementsByClassName("activity")[0].style.background = "rgb(100, 230, 120,.8)";
 	}
 }
 
@@ -191,7 +193,7 @@ function pushButton_proj() {
 		document.getElementById("underName").children[1].innerHTML = descriz_urbesp;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Via Pascucci Spazio 14"){
-		root.style.setProperty('--gifUrl', "url('https://lh3.googleusercontent.com/proxy/EgYmobsn4jM30I84CZ809RzRVCuOYmEHnUdXSIEBt6Xvg2zEOka6SFoyybemb8mWgod1xfrKkSLrEauN_rZye6Tx2YgHLTr7GvHx7AI1uaaDFn0Y8E0c5tt63SVgFCc')")
+		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/schlatterca.com/main/img/vp14.gif')")
 		document.getElementById("underName").children[0].href = "https://www.vp-spazio14.com/";
 		document.getElementById("underName").children[1].innerHTML = descriz_viapas;
 
@@ -201,7 +203,7 @@ function pushButton_proj() {
 		document.getElementById("underName").children[1].innerHTML = descriz_unconv;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Hayao Typeface"){
-		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/Unconv-Posting/master/Gif_Unconv_4fps.gif')")
+		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/schlatterca.com/main/img/hayao.gif')")
 		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/B_pYEQUIxpE/";
 		document.getElementById("underName").children[1].innerHTML = descriz_hayao;
 	
@@ -272,7 +274,9 @@ function checkIfRap() {
 	if ((document.getElementsByClassName("impiego")[0].innerHTML == "grande fan di Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "all’ascolto di rap italiano")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
 		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
 		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
+	} else if (colorCount == 0) {
+		root.style.setProperty('--mainColor', colori[colorCount+5]);
 	} else {
-		root.style.setProperty('--mainColor', colori[colorCount-1])
+		root.style.setProperty('--mainColor', colori[colorCount-1]);
 	}
 }
