@@ -183,17 +183,17 @@ function pushButton_proj() {
 		document.getElementById("underName").children[1].innerHTML = descriz_parade;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Deep Fusion"){
-		root.style.setProperty('--gifUrl', "url('https://digitazon.com/wp-content/uploads/2020/05/60f6e7294309c3ec67855e35eb1912da.gif')")
+		root.style.setProperty('--gifUrl', "url('../img/deepfus.gif')")
 		document.getElementById("underName").children[0].href = "https://schlatterca.com/deepfusion/index.html";
 		document.getElementById("underName").children[1].innerHTML = descriz_deepfu;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Urbino Esposta"){
-		root.style.setProperty('--gifUrl', "url('https://lh3.googleusercontent.com/proxy/EgYmobsn4jM30I84CZ809RzRVCuOYmEHnUdXSIEBt6Xvg2zEOka6SFoyybemb8mWgod1xfrKkSLrEauN_rZye6Tx2YgHLTr7GvHx7AI1uaaDFn0Y8E0c5tt63SVgFCc')")
+		root.style.setProperty('--gifUrl', "url('../img/urbesp.gif')")
 		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/CInX92VB4vD/";
 		document.getElementById("underName").children[1].innerHTML = descriz_urbesp;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Via Pascucci Spazio 14"){
-		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/schlatterca.com/main/img/vp14.gif')")
+		root.style.setProperty('--gifUrl', "url('../img/vp14.gif')")
 		document.getElementById("underName").children[0].href = "https://www.vp-spazio14.com/";
 		document.getElementById("underName").children[1].innerHTML = descriz_viapas;
 
@@ -203,7 +203,7 @@ function pushButton_proj() {
 		document.getElementById("underName").children[1].innerHTML = descriz_unconv;
 	
 	} else if (document.getElementById("underName").children[0].innerHTML == "Hayao Typeface"){
-		root.style.setProperty('--gifUrl', "url('https://raw.githubusercontent.com/schlatterca/schlatterca.com/main/img/hayao.gif')")
+		root.style.setProperty('--gifUrl', "url('../img/hayao.gif')")
 		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/B_pYEQUIxpE/";
 		document.getElementById("underName").children[1].innerHTML = descriz_hayao;
 	
