@@ -77,9 +77,9 @@ var colori = ["rgb(30,140,255,.8)", "rgb(150,55,155,.8)",
 var coloriBis = ["rgb(150,210,255,.8)", "rgb(210,150,210,.8)",
 				"rgb(255,130,130,.8)", "rgb(255,190,130,.8)",
 				"rgb(250,210,80,.8)", "rgb(150, 230, 120,.8)"]
-var projects = ["➡️ Deep Fusion", "➡️ Parade 2020", "➡️ Urbino Esposta",
-				"➡️ Unconventional Posting", "➡️ Via Pascucci Spazio 14",
-				"➡️ Hayao Typeface"
+var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
+				"Unconventional Posting", "Via Pascucci Spazio 14",
+				"Hayao Typeface"
 				/*"Dorli Typeface", "Filtri RA x Studio Dallas",*/]
 
 //START PUSHBUTTON
