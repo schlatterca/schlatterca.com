@@ -39,52 +39,44 @@ var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
 					+"questo carattere morbido come Totoro e scoppiettante<br>"
 					+"come Calcifer è dedicato al grande Hayao Miyazaki."
 
-/*var nome = ["Schlatter Carlo Andrea", "@schlatterca su Instagram", 
-                "Carlito Andreito e poi Schlatterito", "Anche detto Andrea Carlo",
-                "Scachler, Sacher, Screecher, dai lui", "Anche detto Swiss Army Man",
-                "Quello col cognome difficile", "L‘amico tuo! Ah, non era tuo amico?",
-                "Quello col nome da vecchio", "DAI! Carlo! Non hai presente?",
-                "Il tizio con la maglia bianca", "Per gli amici, Carl",
-                "Un italiano molto svizzero", "Alla sua età io già lavoravo",
-                "Uno svizzero molto italiano", "Dai non puoi non averlo presente",
-                "Il proprietario di questo sito", "Quello che si crede simpatico",
-                "Eh poverino, andarsene così…", "Ricordo solo che era alto alto",
-                "Lui, insomma, non lui, l'altro", "Non ce l'hai presente?"];*/
-var nome = ["Carlo Andrea Schlatter", "Instagram: <a target='_blank' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
-				"Facebook: <a target='_blank' href='https://www.facebook.com/c.a.schlatter'>Carlo Schlatter</a>", "Mail: <a target='_blank' href='mailto: schlatterca@gmail.com'>schlatterca@gmail.com</a>",]
+var nome = ["Carlo Andrea Schlatter",
+				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
+				"Facebook: <a target='_blank' style='color: var(--mainColor)' href='https://www.facebook.com/c.a.schlatter'>Carlo Schlatter</a>",
+				"Email: <a target='_blank' style='color: var(--mainColor)' href='mailto: schlatterca@gmail.com'>schlatterca@gmail.com</a>",]
 var impiego = ["studente di Graphic Design", "copywriter freelance<br>per belle aziende",
 				"appassionato di enigmistica", "grande fan di Fabri Fibra",
 				"cuoco improvvisato ma pulito", "patito della politica americana",
-				"intenditore di caramelle<br>gommose e cioccolata", "amatore a livello amatoriale",
-				"programmatore nel tempo<br>libero (molto poco)", "avido lettore, anzi<br>diciamo avido e basta",
-				"bevitore di Mojito<br>con la tequila", "illustratore di grandi piani",
+				"intenditore di caramelle", "amatore a livello amatoriale",
+				"patito della programmazione", "avido lettore, anzi<br>diciamo avido e basta",
+				"bevitore di mojito e tequila", "fan dell’illustrazione",
 				"fotografo soltanto<br>dopo il tramonto", "filosofo per tre anni a Bologna",
-				"accarezzatore di idee<br>strane e bislacche", "domatore di leoni nani",
-				"curatore di bonsai giganti", "sul libro paga della Chiquita"]
+				"sul libro paga della Chiquita"]
 var rightnow = ["ISIA Urbino, Italia", "laureato in Filosofia<br>all'Università di Bologna",
 				"viene da Gambettola,<br>Forlì-Cesena", "è in viaggio verso est",
 				"è al lavoro sul suo sito", "sta giocando a Metal Slug",
-				"immerso in un libro triste", "all’ascolto di rap italiano",
+				"è immerso in un libro triste", "all’ascolto di rap italiano",
 				"sta facendo esercizi<br>di ginnastica ritmica", "sta soffiando il vetro",
 				"sta costruendo un mobile<br>in legno massello", "è in una chat con il bot<br>di Steve Jobs",
-				"nel mezzo di un film d’azione", "ha appena vinto la lotteria",
+				"è nel mezzo di un film d’azione", "ha appena vinto la lotteria",
 				"sta scrivendo un’autobiografia", "sta salvando il Natale",
 				"lo stanno incoronando<br>Papa proprio adesso", "è ai casting di Masterchef",
 				"è stato rapito dagli alieni", "è in giro con Massimo<br>Pericolo e tutta la gang"]
 var activity = ["tra i suoi ultimi lavori:", "guarda mamma che bravo:",
 				"vedi anche alla voce:", "chiudi gli occhi e clicca:",
 				"NON È UN VIRUS:", "si è dedicato a:",
-				"enlarge your graphics:", "non si vergogna affatto di:",
-				"crede che dovresti vedere:", "il suo progetto preferito:",
+				"crede che dovresti vedere:", "non si vergogna affatto di:",
 				"è un po’ ateo, ma crede in:", "con gli amici si vanta di:",
 				"ha lavorato fino a tardi per:", "tiene come a un figlio a:",
 				"forse potrebbe piacerti:", "inizia a conoscerlo da:",
 				"potrebbe spiegarti tutto su:", "un vecchio saggio gli ispirò:",
-				"ha visto in sogno:", "tornato da Narnia ha fatto:",
-				"vorrebbe venderti i diritti di:", "dai un’occhiata a:"]
+				"vorrebbe venderti i diritti di:", "dai un’occhiata a:",
+				"ha visto in sogno:"]
 var colori = ["rgb(30,140,255,.8)", "rgb(150,55,155,.8)",
 				"rgb(225,55,55,.8)", "rgb(245,130,0,.8)",
-				"rgb(255,185,0,.8)", "rgb(95,190,60,.8)"]
+				"rgb(230,160,0,.8)", "rgb(95,190,60,.8)"]
+var coloriBis = ["rgb(150,210,255,.8)", "rgb(210,150,210,.8)",
+				"rgb(255,130,130,.8)", "rgb(255,190,130,.8)",
+				"rgb(250,210,80,.8)", "rgb(150, 230, 120,.8)"]
 var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
 				"Unconventional Posting", "Via Pascucci Spazio 14",
 				"Hayao Typeface"
@@ -107,9 +99,8 @@ function pushButton_1() {
 
     if (document.getElementsByClassName("nome")[0].innerHTML == "Carlo Andrea Schlatter") {
 		document.getElementsByClassName("nome")[0].style.background = "var(--mainColor)";
-		console.log(root);
 	} else {
-		document.getElementsByClassName("nome")[0].style.background = "rgb(100, 230, 120,.8)";
+		document.getElementsByClassName("nome")[0].style.background = "var(--secondColor)";
 	}
 
 }
@@ -125,10 +116,11 @@ function pushButton_2() {
 	if (document.getElementsByClassName("impiego")[0].innerHTML == "studente di Graphic Design") {
 		document.getElementsByClassName("impiego")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("impiego")[0].style.background = "rgb(100, 230, 120,.8)";
+		document.getElementsByClassName("impiego")[0].style.background = "var(--secondColor)";
 	}
 
 	checkIfRap();
+	checkIfPhilosopher();
 }
 
 function pushButton_3() {
@@ -142,10 +134,11 @@ function pushButton_3() {
 	if (document.getElementsByClassName("rightnow")[0].innerHTML == "ISIA Urbino, Italia") {
 		document.getElementsByClassName("rightnow")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("rightnow")[0].style.background = "rgb(100, 230, 120,.8)";
+		document.getElementsByClassName("rightnow")[0].style.background = "var(--secondColor)";
 	}
 
 	checkIfRap();
+	checkIfPhilosopher();
 }
 
 function pushButton_4() {
@@ -159,7 +152,7 @@ function pushButton_4() {
 	if (document.getElementsByClassName("activity")[0].innerHTML == "tra i suoi ultimi lavori:") {
 		document.getElementsByClassName("activity")[0].style.background = "var(--mainColor)";
 	} else {
-		document.getElementsByClassName("activity")[0].style.background = "rgb(100, 230, 120,.8)";
+		document.getElementsByClassName("activity")[0].style.background = "var(--secondColor)";
 	}
 }
 
@@ -215,6 +208,10 @@ function pushButton_proj() {
 
 function loadOpacity() {
 
+	colorCount = Math.floor(Math.random() * colori.length);
+	console.log(colorCount);
+	changeColors();
+
 	projects = projects.sort(() => Math.random() - 0.5)
 	projectCount += Math.floor(Math.random() * projects.length);
 	pushButton_proj();
@@ -251,12 +248,21 @@ function reloadPage() {
 function changeColors() {
 	
 	root.style.setProperty('--mainColor', colori[colorCount]);
+	root.style.setProperty('--secondColor', coloriBis[colorCount]);
 
 	if (colorCount < colori.length-1) {
 		colorCount += 1;
 	} else {
 		colorCount = 0;
 	}
+	//console.log(root.style.cssText);
+	//console.log(colori[colorCount] + coloriBis[colorCount]);
+}
+
+function shuffleColors() {
+
+	root.style.setProperty('--mainColor',  "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+",.8)");
+	root.style.setProperty('--secondColor',  "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+",.8)");
 }
 
 function moreInfo() {
@@ -274,9 +280,28 @@ function checkIfRap() {
 	if ((document.getElementsByClassName("impiego")[0].innerHTML == "grande fan di Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "all’ascolto di rap italiano")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
 		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
 		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
+		root.style.setProperty('--secondColor', "rgb(80,80,80,.8)");
 	} else if (colorCount == 0) {
 		root.style.setProperty('--mainColor', colori[colorCount+5]);
+		root.style.setProperty('--secondColor', coloriBis[colorCount+5]);
 	} else {
 		root.style.setProperty('--mainColor', colori[colorCount-1]);
+		root.style.setProperty('--secondColor', coloriBis[colorCount-1]);
+	}
+}
+
+function checkIfPhilosopher() {
+	//EASTER EGG RAP
+	if ((document.getElementsByClassName("impiego")[0].innerHTML == "filosofo per tre anni a Bologna")&&(document.getElementsByClassName("rightnow")[0].innerHTML == "laureato in Filosofia<br>all'Università di Bologna")){
+		console.log("ok");
+		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
+		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
+		root.style.setProperty('--secondColor', "rgb(80,80,80,.8)");
+	} else if (colorCount == 0) {
+		root.style.setProperty('--mainColor', colori[colorCount+5]);
+		root.style.setProperty('--secondColor', coloriBis[colorCount+5]);
+	} else {
+		root.style.setProperty('--mainColor', colori[colorCount-1]);
+		root.style.setProperty('--secondColor', coloriBis[colorCount-1]);
 	}
 }
