@@ -120,7 +120,6 @@ function pushButton_2() {
 	}
 
 	checkIfRap();
-	checkIfPhilosopher();
 }
 
 function pushButton_3() {
@@ -138,7 +137,6 @@ function pushButton_3() {
 	}
 
 	checkIfRap();
-	checkIfPhilosopher();
 }
 
 function pushButton_4() {
@@ -209,7 +207,6 @@ function pushButton_proj() {
 function loadOpacity() {
 
 	colorCount = Math.floor(Math.random() * colori.length);
-	console.log(colorCount);
 	changeColors();
 
 	projects = projects.sort(() => Math.random() - 0.5)
@@ -281,22 +278,10 @@ function checkIfRap() {
 		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
 		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
 		root.style.setProperty('--secondColor', "rgb(80,80,80,.8)");
-	} else if (colorCount == 0) {
-		root.style.setProperty('--mainColor', colori[colorCount+5]);
-		root.style.setProperty('--secondColor', coloriBis[colorCount+5]);
-	} else {
-		root.style.setProperty('--mainColor', colori[colorCount-1]);
-		root.style.setProperty('--secondColor', coloriBis[colorCount-1]);
-	}
-}
-
-function checkIfPhilosopher() {
-	//EASTER EGG RAP
-	if ((document.getElementsByClassName("impiego")[0].innerHTML == "filosofo per tre anni a Bologna")&&(document.getElementsByClassName("rightnow")[0].innerHTML == "laureato in Filosofia<br>all'Università di Bologna")){
-		console.log("ok");
-		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
-		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
-		root.style.setProperty('--secondColor', "rgb(80,80,80,.8)");
+	} else if ((document.getElementsByClassName("impiego")[0].innerHTML == "filosofo per tre anni a Bologna")&&(document.getElementsByClassName("rightnow")[0].innerHTML == "laureato in Filosofia<br>all'Università di Bologna")){
+		root.style.setProperty('--gifUrl', "url('https://i.gifer.com/G0bU.gif')")
+		root.style.setProperty('--mainColor', "rgb(200,100,0,.8)")
+		root.style.setProperty('--secondColor', "rgb(210,150,0,.8)");
 	} else if (colorCount == 0) {
 		root.style.setProperty('--mainColor', colori[colorCount+5]);
 		root.style.setProperty('--secondColor', coloriBis[colorCount+5]);
