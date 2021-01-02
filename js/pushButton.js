@@ -4,6 +4,8 @@ let projectCount = 0;
 let opac_2 = 1;
 let opac_3 = 1;
 let opac_4 = 1;
+let shuffled;
+let english;
 
 let root = document.documentElement;
 
@@ -246,6 +248,7 @@ function changeColors() {
 	
 	root.style.setProperty('--mainColor', colori[colorCount]);
 	root.style.setProperty('--secondColor', coloriBis[colorCount]);
+	shuffled = false;
 
 	if (colorCount < colori.length-1) {
 		colorCount += 1;
@@ -260,6 +263,7 @@ function shuffleColors() {
 
 	root.style.setProperty('--mainColor',  "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+",.8)");
 	root.style.setProperty('--secondColor',  "rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+",.8)");
+	shuffled = true;
 }
 
 function moreInfo() {
@@ -282,6 +286,8 @@ function checkIfRap() {
 		root.style.setProperty('--gifUrl', "url('https://i.gifer.com/G0bU.gif')")
 		root.style.setProperty('--mainColor', "rgb(200,100,0,.8)")
 		root.style.setProperty('--secondColor', "rgb(210,150,0,.8)");
+	} else if (shuffled == true) {
+		return
 	} else if (colorCount == 0) {
 		root.style.setProperty('--mainColor', colori[colorCount+5]);
 		root.style.setProperty('--secondColor', coloriBis[colorCount+5]);
