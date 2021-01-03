@@ -39,7 +39,7 @@ var descriz_unconv = "Progetto di ricerca ispirato dai temi dell’Agenda ONU<br
 var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
 					+"dei lungometraggi d’animazione dello studio Ghibli,<br>"
 					+"questo carattere morbido come Totoro e scoppiettante<br>"
-					+"come Calcifer è dedicato al grande Hayao Miyazaki."
+					+"come Calcifer è dedicato al celebre Hayao Miyazaki."
 
 var nome = ["Carlo Andrea Schlatter",
 				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
