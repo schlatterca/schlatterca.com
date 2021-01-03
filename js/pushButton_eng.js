@@ -51,7 +51,7 @@ var impiego = ["Graphic Design student", "freelance copywriter<br>for great comp
 				"candy connoisseur", "travelling runner",
 				"coding enthusiast", "greedy reader, or rather<br>let’s say just greedy",
 				"tequila mojito drinker", "illustration fanatic",
-				"after dark<br>photographer", "philosopher in Bologna",
+				"after-dark photographer", "philosopher in Bologna",
 				"on Chiquita’s payroll"]
 var rightnow = ["ISIA Urbino, Italy", "graduated in Philosophy<br>at the University of Bologna",
 				"comes from Gambettola,<br>Forlì-Cesena", "is traveling east",
