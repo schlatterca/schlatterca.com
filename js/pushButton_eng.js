@@ -16,63 +16,63 @@ var descriz_carlo = "Hi! I’m Carlo Andrea, I study Graphic Design and Visual<b
 					+"and Coke, it is possible to achieve anything in life.<br>"
 					+"This site, for example, did cost me nine Cokes.<br>"
 					+"Tap my name at the top to see my contact informations!"
-var descriz_parade = "Online showcase for ISIA U featuring podcasts, videos,<br>"
+var descriz_parade = "Online ISIA U showcase featuring podcasts, videos,<br>"
 					+"images, material gathered by professors and students.<br>"
-					+"Throughout the three-day duration of the event, a script<br>"
-					+"made new events available every hour."
-var descriz_deepfu = "This photo project collects experiments and researches<br>"
-					+"on Deep Fusion, an algorithm Apple developed in 2019<br>"
+					+"During the three days of the event, a special script<br>"
+					+"made new projects available to discover every hour."
+var descriz_deepfu = "This photo project collects experiments and studies<br>"
+					+"on Deep Fusion, a software Apple developed in 2019<br>"
 					+"to improve photos taken in the dark with iPhone 11.<br>"
 					+"The virtual exhibition is open from dusk until dawn."
 var descriz_urbesp = "A very unconventional tourist guide to the complex<br>"
 					+"Urbino telecommunications infrastructure: the entire<br>"
 					+"historic center was mapped, photographed, rethought<br>"
-					+"as part of an Internet Tour with artist Mario Santamaría."
+					+"as in an Internet Tour with artist Mario Santamaría."
 var descriz_viapas = "For this interior design and gift store I configured<br>"
 					+"communications and Internet presence, starting with<br>"
 					+"business cards to setting up the whole online shop<br>"
 					+"on website, Instagram and Facebook Marketplace."
-var descriz_unconv = "Research project inspired by the themes of the UN 2030<br>"
+var descriz_unconv = "Research project based on the themes of the UN 2030<br>"
 					+"Agenda on public access to information. A guide to<br>"
 					+"an unconventional use of the Internet, from easter<br>"
 					+"eggs to ciphers, developing one’s online freedom."
-var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
-					+"dei lungometraggi d’animazione dello studio Ghibli,<br>"
-					+"questo carattere morbido come Totoro e scoppiettante<br>"
-					+"come Calcifer è dedicato al grande Hayao Miyazaki."
+var descriz_hayao = "Inspired by the shapes, characters and atmospheres<br>"
+					+"of the animated films of the Ghibli studio, this<br>"
+					+"this character as soft as Totoro and as crackling<br>"
+					+"as Calcifer is dedicated to Hayao Miyazaki."
 
 var nome = ["Carlo Andrea Schlatter",
 				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
 				"Facebook: <a target='_blank' style='color: var(--mainColor)' href='https://www.facebook.com/c.a.schlatter'>Carlo Schlatter</a>",
 				"Email: <a target='_blank' style='color: var(--mainColor)' href='mailto: schlatterca@gmail.com'>schlatterca@gmail.com</a>",]
-var impiego = ["Graphic Design student", "copywriter freelance<br>per belle aziende",
-				"appassionato di enigmistica", "grande fan di Fabri Fibra",
-				"cuoco improvvisato ma pulito", "patito della politica americana",
-				"intenditore di caramelle", "amatore a livello amatoriale",
-				"patito della programmazione", "avido lettore, anzi<br>diciamo avido e basta",
-				"bevitore di mojito e tequila", "fan dell’illustrazione",
-				"fotografo soltanto<br>dopo il tramonto", "filosofo per tre anni a Bologna",
-				"sul libro paga della Chiquita"]
-var rightnow = ["ISIA Urbino, Italy", "laureato in Filosofia<br>all'Università di Bologna",
-				"viene da Gambettola,<br>Forlì-Cesena", "è in viaggio verso est",
-				"è al lavoro sul suo sito", "sta giocando a Metal Slug",
-				"è immerso in un libro triste", "all’ascolto di rap italiano",
-				"sta facendo esercizi<br>di ginnastica ritmica", "sta soffiando il vetro",
-				"sta costruendo un mobile<br>in legno massello", "è in una chat con il bot<br>di Steve Jobs",
-				"è nel mezzo di un film d’azione", "ha appena vinto la lotteria",
-				"sta scrivendo un’autobiografia", "sta salvando il Natale",
-				"lo stanno incoronando<br>Papa proprio adesso", "è ai casting di Masterchef",
-				"è stato rapito dagli alieni", "è in giro con Massimo<br>Pericolo e tutta la gang"]
-var activity = ["among his works:", "guarda mamma che bravo:",
-				"vedi anche alla voce:", "chiudi gli occhi e clicca:",
-				"NON È UN VIRUS:", "si è dedicato a:",
-				"crede che dovresti vedere:", "non si vergogna affatto di:",
-				"è un po’ ateo, ma crede in:", "con gli amici si vanta di:",
-				"ha lavorato fino a tardi per:", "tiene come a un figlio a:",
-				"forse potrebbe piacerti:", "inizia a conoscerlo da:",
-				"potrebbe spiegarti tutto su:", "un vecchio saggio gli ispirò:",
-				"vorrebbe venderti i diritti di:", "dai un’occhiata a:",
-				"ha visto in sogno:"]
+var impiego = ["Graphic Design student", "freelance copywriter<br>for great companies",
+				"puzzles enthusiast", "big fan of Fabri Fibra",
+				"improvised but tidy cook", "US politics buff",
+				"candy connoisseur", "travelling runner",
+				"coding enthusiast", "greedy reader, or rather<br>let’s say just greedy",
+				"tequila mojito drinker", "illustration fanatic",
+				"after dark<br>photographer", "philosopher in Bologna",
+				"on Chiquita’s payroll"]
+var rightnow = ["ISIA Urbino, Italy", "graduated in Philosophy<br>at the University of Bologna",
+				"comes from Gambettola,<br>Forlì-Cesena", "is traveling east",
+				"is working on his website", "is playing Metal Slug",
+				"is immersed in a sad book", "is listening to italian rap",
+				"is doing rhythmic<br>gymnastics exercises", "is blowing glass",
+				"is building a solid<br>wood cabinet", "is in a chat with<br>Steve Jobs’ bot",
+				"is in the middle<br>of an action movie", "just won the lottery",
+				"is writing an autobiography", "is saving Christmas",
+				"is being crowned<br>Pope right now", "is casting for Masterchef",
+				"has been abducted by aliens", "is out with Massimo<br>Pericolo and the crew"]
+var activity = ["among his works:", "look mom, no hands:",
+				"see also under:", "close your eyes and click:",
+				"THIS IS NOT A VIRUS:", "dedicated himself to:",
+				"thinks you should check out:", "is not at all ashamed of:",
+				"is a bit of an atheist,<br>but believes in:", "is bragging about:",
+				"has been working late for:", "cares a lot to:",
+				"maybe you might like:", "get to know him from:",
+				"could explain everything about:", "a wise old man inspired him:",
+				"would sell you the rights to:", "take a look at:",
+				"dreamed of:"]
 var colori = ["rgb(30,140,255,.8)", "rgb(150,55,155,.8)",
 				"rgb(225,55,55,.8)", "rgb(245,130,0,.8)",
 				"rgb(230,160,0,.8)", "rgb(95,190,60,.8)"]
@@ -278,11 +278,11 @@ function moreInfo() {
 
 function checkIfRap() {
 	//EASTER EGG RAP
-	if ((document.getElementsByClassName("impiego")[0].innerHTML == "grande fan di Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "all’ascolto di rap italiano")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
+	if ((document.getElementsByClassName("impiego")[0].innerHTML == "big fan of Fabri Fibra")&&((document.getElementsByClassName("rightnow")[0].innerHTML == "is listening to italian rap")||(document.getElementsByClassName("rightnow")[0].innerHTML == "è in giro con Massimo<br>Pericolo e tutta la gang"))){
 		root.style.setProperty('--gifUrl', "url('https://media1.tenor.com/images/ba6a863b50713b654a7189c9bff75913/tenor.gif')")
 		root.style.setProperty('--mainColor', "rgb(0,0,0,.8)")
 		root.style.setProperty('--secondColor', "rgb(80,80,80,.8)");
-	} else if ((document.getElementsByClassName("impiego")[0].innerHTML == "filosofo per tre anni a Bologna")&&(document.getElementsByClassName("rightnow")[0].innerHTML == "laureato in Filosofia<br>all'Università di Bologna")){
+	} else if ((document.getElementsByClassName("impiego")[0].innerHTML == "philosopher in Bologna")&&(document.getElementsByClassName("rightnow")[0].innerHTML == "graduated in Philosophy<br>at the University of Bologna")){
 		root.style.setProperty('--gifUrl', "url('https://i.gifer.com/G0bU.gif')")
 		root.style.setProperty('--mainColor', "rgb(200,100,0,.8)")
 		root.style.setProperty('--secondColor', "rgb(210,150,0,.8)");
