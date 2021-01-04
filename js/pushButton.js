@@ -35,11 +35,15 @@ var descriz_viapas = "Per questo negozio di arredamenti e oggettistica<br>"
 var descriz_unconv = "Progetto di ricerca ispirato dai temi dell’Agenda ONU<br>"
 					+"2030 sul pubblico accesso all’informazione. Una guida<br>"
 					+"all’uso non convenzionale di Internet, tra easter egg<br>"
-					+"e cifrari, al fine di sviluppare le propria libertà online."
+					+"e cifrari, per poter sviluppare le propria libertà online."
 var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
 					+"dei lungometraggi d’animazione dello studio Ghibli,<br>"
 					+"questo carattere morbido come Totoro e scoppiettante<br>"
 					+"come Calcifer è dedicato al celebre Hayao Miyazaki."
+var descriz_audvi = "Filtri per la fotocamera realizzati in linguaggio P5.js<br>"
+					+"e ispirati al repertorio sonoro e visivo della band<br>"
+					+"Nine Inch Nails. Le immagini cambiano, si modificano,<br>"
+					+"si distorcono a seconda dei suoni prodotti dall’utente."
 
 var nome = ["Carlo Andrea Schlatter",
 				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
@@ -81,7 +85,7 @@ var coloriBis = ["rgb(150,210,255,.8)", "rgb(210,150,210,.8)",
 				"rgb(250,210,80,.8)", "rgb(150, 230, 120,.8)"]
 var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
 				"Unconventional Posting", "Via Pascucci Spazio 14",
-				"Hayao Typeface"
+				"Hayao Typeface", "Audio_Visual_Filters"
 				/*"Dorli Typeface", "Filtri RA x Studio Dallas",*/]
 
 //START PUSHBUTTON
@@ -199,6 +203,11 @@ function pushButton_proj() {
 		root.style.setProperty('--gifUrl', "url('../img/hayao.gif')")
 		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/B_pYEQUIxpE/";
 		document.getElementById("underName").children[1].innerHTML = descriz_hayao;
+	
+	} else if (document.getElementById("underName").children[0].innerHTML == "Audio_Visual_Filters"){
+		root.style.setProperty('--gifUrl', "url('../img/audvi.gif')")
+		document.getElementById("underName").children[0].href = "https://schlatterca.github.io/audio_visual_filters/gallery.html";
+		document.getElementById("underName").children[1].innerHTML = descriz_audvi;
 	
 	} else {
 		root.style.setProperty('--gifUrl', "url('https://www.verdict.co.uk/wp-content/uploads/2017/09/giphy-downsized-large.gif')")
