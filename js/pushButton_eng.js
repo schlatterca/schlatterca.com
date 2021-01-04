@@ -37,9 +37,13 @@ var descriz_unconv = "Research project based on the themes of the UN 2030<br>"
 					+"an unconventional use of the Internet, from easter<br>"
 					+"eggs to ciphers, developing one’s online freedom."
 var descriz_hayao = "Inspired by the shapes, characters and atmospheres<br>"
-					+"of the animated films of the Ghibli studio, this<br>"
-					+"this character as soft as Totoro and as crackling<br>"
-					+"as Calcifer is dedicated to Hayao Miyazaki."
+					+"of the animated films produced by Studio Ghibli,<br>"
+					+"this typeface as soft as Totoro and as crackling<br>"
+					+"as Calcifer is dedicated to great Hayao Miyazaki."
+var descriz_audvi = "P5.js application for webcam filters, inspired by<br>"
+					+"the sound and visual repertoire of the US band<br>"
+					+"Nine Inch Nails. The visuals change, modify, distort<br>"
+					+"according to the sounds produced by the user."
 
 var nome = ["Carlo Andrea Schlatter",
 				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
@@ -81,7 +85,7 @@ var coloriBis = ["rgb(150,210,255,.8)", "rgb(210,150,210,.8)",
 				"rgb(250,210,80,.8)", "rgb(150, 230, 120,.8)"]
 var projects = ["Deep Fusion", "Parade 2020", "Urbino Esposta",
 				"Unconventional Posting", "Via Pascucci Spazio 14",
-				"Hayao Typeface"
+				"Hayao Typeface", "Audio_Visual_Filters"
 				/*"Dorli Typeface", "Filtri RA x Studio Dallas",*/]
 
 //START PUSHBUTTON
@@ -199,6 +203,11 @@ function pushButton_proj() {
 		root.style.setProperty('--gifUrl', "url('../img/hayao.gif')")
 		document.getElementById("underName").children[0].href = "https://www.instagram.com/p/B_pYEQUIxpE/";
 		document.getElementById("underName").children[1].innerHTML = descriz_hayao;
+	
+	} else if (document.getElementById("underName").children[0].innerHTML == "Audio_Visual_Filters"){
+		root.style.setProperty('--gifUrl', "url('../img/audvi.gif')")
+		document.getElementById("underName").children[0].href = "https://schlatterca.github.io/audio_visual_filters/gallery.html";
+		document.getElementById("underName").children[1].innerHTML = descriz_audvi;
 	
 	} else {
 		root.style.setProperty('--gifUrl', "url('https://www.verdict.co.uk/wp-content/uploads/2017/09/giphy-downsized-large.gif')")
