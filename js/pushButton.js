@@ -42,8 +42,8 @@ var descriz_hayao = "Ispirato dalle forme, dai personaggi e dalle atmosfere<br>"
 					+"come Calcifer è dedicato al celebre Hayao Miyazaki."
 var descriz_audvi = "Filtri per la fotocamera realizzati in linguaggio P5.js<br>"
 					+"e ispirati al repertorio sonoro e visivo della band<br>"
-					+"Nine Inch Nails. Le immagini cambiano, si modificano,<br>"
-					+"si distorcono a seconda dei suoni prodotti dall’utente."
+					+"Nine Inch Nails. Le immagini cambiano, si modificano<br>"
+					+"e si distorcono seguendo i suoni prodotti dall’utente."
 
 var nome = ["Carlo Andrea Schlatter",
 				"Instagram: <a target='_blank' style='color: var(--mainColor)' href='https://www.instagram.com/schlatter.ca/'>@schlatterca</a>",
