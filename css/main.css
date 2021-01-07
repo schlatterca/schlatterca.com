@@ -221,6 +221,18 @@ body{
 /*MEDIA QUERY*/
 /*@media screen and (min-width: 600px)*/
 @media (min-width: 600px) {
+  .gifz{
+    position: fixed;
+    
+    z-index: -1;
+    width: 100%;
+    height: 200%;
+    opacity: 0.3;
+    background-image: var(--gifUrl);
+    background-size: 100vw; 
+    background-position-y: 0vh;
+  }
+
   #underName {
     font-size: 34px;
     font-weight: medium;
