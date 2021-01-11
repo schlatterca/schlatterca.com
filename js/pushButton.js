@@ -283,6 +283,10 @@ function moreInfo() {
 		document.getElementsByClassName("infoClose")[0].classList.add("infoOpen");
 		document.getElementsByClassName("infoClose")[0].innerHTML = descriz_carlo;
 	}
+	document.getElementsByClassName("infoClose")[0].classList.add("rotation");
+    setTimeout(function() {
+        document.getElementsByClassName("infoClose")[0].classList.remove("rotation");
+    }, 300);
 }
 
 function checkIfRap() {
