@@ -1,0 +1,93 @@
+@font-face {
+    font-family: score;
+    src: url('assets/fonts/score.ttf');
+}
+  
+* {
+    padding: 0;
+    margin: 0;
+    font-family: score, sans-serif;
+    text-transform: uppercase;
+}
+
+.close_button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background:white;
+    border-radius:20px;
+    cursor: pointer;
+    font-weight: 600;
+    border: 1px solid black;
+    font-family: Helvetica;
+    font-weight: normal;
+    text-transform: lowercase;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.close_button:active {
+    background: grey;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+canvas {
+    background-color: #fff;
+}
+#state {
+    position: absolute;
+    top: 20px;
+    left: 50vw;
+}
+#player {
+    position: absolute;
+    top: 40px;
+    left: 50vw;
+}
+#dt {
+    position: absolute;
+    top: 60px;
+    left: 50vw;
+}
+#lag {
+    position: absolute;
+    top: 80px;
+    left: 50vw;
+}
+#score_container {
+    position: absolute;
+    top: calc(100vh - 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.score {
+    color: #64686b;
+    margin-right: 10px
+}
+#scoreLabel {
+    font-size: 16px;
+}
+#score {
+    font-size: 40px;
+}
+
+ul li {
+    color: #565656;
+    list-style: none;
+}
+
+#message {
+    color: #64686b;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+}

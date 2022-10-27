@@ -1,0 +1,259 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Acid;
+}
+
+:root {
+  --gifUrl: url(background/1.gif);
+  --btnColor: hsl(200, 100%, 50%);
+  --fontsizeM: 10px;
+  --fontsizeL: 18px;
+
+  --image1: 'faces/gandhi.png';
+}
+
+@font-face{
+  font-family: Acid;
+  src: url(fonts/AcidGrotesk-Regular.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /*background-color: #333;
+  background-image: var(--gifUrl);
+  background-size: 100%;*/
+}
+
+body::before {    
+  content: "";
+  background-image: var(--gifUrl);
+  background-size: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main_start {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 60px;
+  background: var(--gifUrl);
+  transition: 1.2s opacity;
+}
+
+#main_start:before {
+  content: "";
+  background-color: white;
+  /*background: var(--gifUrl);*/
+  opacity: .6;
+  background-size: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+#main_start > svg {
+  position: absolute;
+  left: 50vw;
+  top: 40vh;
+  transform: translate(-50%,-50%);
+  max-width: 1000px;
+}
+#main_start path {
+  fill: var(--btnColor);
+}
+#main_start > img {
+  position: absolute;
+  left: 50vw;
+  top: 40vh;
+  transform: translate(-50%,-50%);
+  max-width: 1000px;
+  width: 90%;
+}
+
+#main_start > button {
+  position: absolute;
+  left: 50vw;
+  bottom: 6vh;
+  transform: translate(-50%,-50%);
+  font-size: 44px;
+  background-color: white;
+  border-radius: 200px;
+  border: 2px solid var(--btnColor);
+  color: var(--btnColor);
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+#main_start > button:active {
+  background-color: grey;
+}
+
+.buttons {
+  position:absolute;
+  top:10px;
+  left:10px;
+}
+
+.changeBackground, .changeGandhi, .fight_simulator, .run_simulator {
+  background:white;
+  border:0;
+  border-radius:20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.changeBackground:active,
+.changeGandhi:active,
+.fight_simulator:active,
+.run_simulator:active {
+  background: grey;
+}
+
+.displayNone {
+  display: none;
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
+  z-index: 1;
+  text-align: center;
+}
+
+#image_main {
+  padding-left: 30%;
+  padding-right: 30%;
+  margin-bottom: 20px;
+}
+
+#image_main > a > img {
+  width: 50%;
+}
+
+#image {
+  animation: moveHand 2s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@keyframes moveHand {
+  0%, 100% {transform: rotate(-2deg);}
+  50% {transform: rotate(2deg);}
+}
+
+#text {
+  font-size: var(--fontsizeL);
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto, auto);
+  gap: 4px;
+  margin-top: 40px;
+}
+
+.btn-grid > * {
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn {
+  background-color: var(--btnColor);
+  border: 1px solid hsl(200, 100%, 30%);
+  border-radius: 5px;
+  padding: 12px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn:active {
+  background-color: black;
+}
+.btn:hover {
+  border-color: black;
+}
+
+/*SVG*/
+.cls-1 {
+  stroke-linecap: round;
+  stroke: white;
+  stroke-width: 6;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+}
+
+.svg-title-1 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-2 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-3, .svg-title-8, .svg-title-14 {
+  stroke-dasharray: 5200;
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-4 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-5 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-6 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-7 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-8 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-9 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-10 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-11 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-12 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-13 {
+  animation: dash 4s ease-in forwards;
+}
+.svg-title-14 {
+  animation: dash 4s ease-in forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

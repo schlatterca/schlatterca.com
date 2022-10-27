@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>il simulatore di lotta di Carlo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+    <button class='close_button' onclick='window.close()'>chiudi il simulatore di lotta</button>
+
+    <div id="fullframe">
+        
+        <div class="user-poke">
+            <img class="centerPokemonPlayer" v-bind:src="userPokemon" v-bind:class="{'playerShake': playerShake, 'playerAttack': playerAttack}" />
+        </div>
+        
+        <div class="user-hp">
+          <p>&nbsp;HP:&nbsp;<span class="hp-bar-fill" v-bind:style="userHpObj"></span></p>
+        </div>
+        
+        <div class="opponent-poke">
+            <img class="centerPokemon" v-bind:src="oppoPokemon" v-bind:class="{'opponentShake': opponentShake, 'oppoAttack': oppoAttack}" />
+        </div>
+        
+        <div class="opponent-hp">
+            <p>&nbsp;HP:&nbsp;<span class="hp-bar-fill" v-bind:style="oppoHpObj"></span></p>
+        </div> 
+        
+        <div class="bottom-left">
+            <div class="bottom-left-text">
+                <p class="centerOption">{{ bottomText }}</p>
+            </div>
+        </div>
+        
+        <div class="bottom-right">
+            <div v-show="showbottomright">
+                <a v-if="backStatus" v-on:click.prevent="backOption" href="" class="centerbackOption">BACK</a>
+                <div class="bottom-right-1">
+                    <a v-on:click.prevent="fightOptionStatus ? fightOption() : userAttackingOption(1)" href="" class="centerOption tooltip"><span v-if="tooltipStatus" class="tooltiptext">Un pugno. Di quelli dati con le mani.</span>{{ option1 }}</a>
+                </div>
+
+                <div class="bottom-right-2">
+                    <a v-on:click.prevent="fightOptionStatus ? itemOption() : userAttackingOption(2)" href="" class="centerOption tooltip"><span v-if="tooltipStatus" class="tooltiptext">Un calcio, non nel senso sportivo del termine.</span>{{ option2 }}</a>
+                </div>
+
+                <div class="bottom-right-3">
+                    <a v-on:click.prevent="fightOptionStatus ? pokemonOption() : userAttackingOption(3)" href="" class="centerOption tooltip"><span v-if="tooltipStatus" class="tooltiptext">Come applaudire, ma con la sua faccia in mezzo.</span>{{ option3 }}</a>
+                </div>
+
+                <div class="bottom-right-4">
+                    <a v-on:click.prevent="fightOptionStatus ? runOption() : userAttackingOption(4)" href="" class="centerOption tooltip"><span v-if="tooltipStatus" class="tooltiptext">Non quella giornalistica.</span>{{ option4 }}</a>
+                </div>
+            </div>    
+        </div>
+        
+    </div>
+    
+    <script>
+        var pokemonApp = new Vue({
+            el: '#fullframe',
+            data: {
+                userHP: 300,
+                oppoHP: 250,
+                userPokemon: "fighting_mani.png",
+                oppoPokemon: "fighting_carlo.png",
+                bottomPoke: "Tu",
+                bottomText: "Che vuoi fare?",
+                option1: "Combatti",
+                topPoke: "Carlo",
+                option2: "Grida",
+                option3: "Pokémon",
+                option4: "Scappa",
+                backStatus: false,
+                tooltipStatus: false,
+                timers: null,
+                fightOptionStatus: true,
+                option1DMG: 70,
+                option2DMG: 30,
+                option3DMG: 120,
+                option4DMG: 100,
+                userHpObj: { width: '100%' },
+                oppoHpObj: { width: '100%' },
+                playerShake: false,
+                opponentShake: false,
+                playerAttack: false,
+                oppoAttack: false,
+                currentTurn: "player",
+                showbottomright: true
+                
+
+                
+            },
+            methods: {
+                fightOption: function (){
+                    this.option1="Pugno";
+                    this.option2="Calcio";
+                    this.option3="Schiaffo";
+                    this.option4="Testata";
+                    this.backStatus=true;
+                    this.tooltipStatus=true;
+                    this.fightOptionStatus=false;
+
+                },
+                itemOption: function (){
+                    this.bottomText="Hai gridato facendo la figura del pirla. Non succede nulla.";
+                    var vm = this;
+                    clearTimeout(this.timers);
+                    this.timers = setTimeout(function(){
+                        vm.bottomText="Che vuoi fare?";
+                    },1500);
+                },
+                pokemonOption: function (){
+                    this.bottomText="Ma quali pokémon che stai a fare a botte? Svegliati, hai ormai trent’anni!";
+                    var vm = this;
+                    clearTimeout(this.timers);
+                    this.timers = setTimeout(function(){
+                        vm.bottomText="Che vuoi fare?";
+                    },1500);
+                },
+                runOption: function (){
+                    this.bottomText="Non puoi scappare da Carlo pixellato!";
+                    var vm = this;
+                    clearTimeout(this.timers);
+                    this.timers = setTimeout(function(){
+                        vm.bottomText="Che vuoi fare?";
+                    },1500);
+                },
+                backOption: function (){
+                    this.option1="Combatti";
+                    this.option2="Grida";
+                    this.option3="Pokémon";
+                    this.option4="Scappa";
+                    this.backStatus=false;
+                    this.tooltipStatus=false;
+                    this.fightOptionStatus=true;
+                },
+                userAttackingOption: function (moveId){
+                    if (moveId == 1){
+                        
+                        this.showbottomright=false;
+                        
+                        this.bottomText="Hai dato un pugno a Carlo!";
+                        this.oppoHP-=this.option1DMG;
+                        console.log("La vita di Carlo è " + this.oppoHP);
+                        // 160px health is considered 100%
+                        var newWidth = (this.oppoHP/250)*160;
+                        this.playerAttack=true;
+                        this.opponentShake=true;
+                        setTimeout(()=>{
+                            this.playerAttack=false;
+                            this.opponentShake=false;
+                        },500);
+                        this.oppoHpObj.width= newWidth + "px";
+                        
+                        // check if opponent fainted
+                        if (this.oppoHP < 0){
+                            this.restart();
+                        } else {
+                         setTimeout(()=> {
+                                this.showbottomright=true;
+                                this.bottomText="Che vuoi fare?";
+                                this.currentTurn="opponent";
+                                this.absolAttack();
+                            },1000);                           
+                        }
+
+                        
+                    }else if(moveId == 2){
+                        
+                        this.showbottomright=false;
+                        this.bottomText="Hai dato un calcio a Carlo!"
+                         this.oppoHP-=this.option2DMG;
+                        console.log("La vita di Carlo è " + this.oppoHP);
+                        // 160px health is considered 100%
+                        var newWidth = (this.oppoHP/250)*160;
+                        this.playerAttack=true;
+                        this.opponentShake=true;
+                        setTimeout(()=>{
+                            this.playerAttack=false;
+                            this.opponentShake=false;
+                        },1000);
+                        pokemonApp.oppoHpObj.width= newWidth + "px";
+                        // check if opponent fainted
+                        if (this.oppoHP < 0){
+                            this.restart();
+                        } else {
+                              setTimeout(()=> {
+                                this.showbottomright=true;
+                                this.bottomText="Che vuoi fare?";
+                                this.currentTurn="opponent";
+                                this.absolAttack();
+                            },1000);                            
+                        }
+                 
+
+                    }else if(moveId == 3){
+                        this.showbottomright=false;
+                        this.bottomText="Hai dato uno schiaffo a Carlo!"
+                         this.oppoHP-=this.option3DMG;
+                        console.log("La vita di Carlo è " + this.oppoHP);
+                        // 160px health is considered 100%
+                        var newWidth = (this.oppoHP/250)*160;
+                        this.playerAttack=true;
+                        this.opponentShake=true;
+                        setTimeout(()=>{
+                            this.playerAttack=false;
+                            this.opponentShake=false;
+                        },1000);
+                        pokemonApp.oppoHpObj.width= newWidth + "px";
+                         // check if opponent fainted
+                        if (this.oppoHP < 0){
+                            this.restart();
+                        } else {
+                            setTimeout(()=> {
+                                this.showbottomright=true;
+                                this.bottomText="Che vuoi fare?";
+                                this.currentTurn="opponent";
+                                this.absolAttack();
+                            },1000);
+                            
+                        }
+
+
+                    }else if(moveId == 4){
+                        this.showbottomright=false;
+                        this.bottomText="Hai dato una testata a Carlo!"
+
+                         this.oppoHP-=this.option4DMG;
+                        console.log("La vita di Carlo è " + this.oppoHP);
+                        // 160px health is considered 100%
+                        var newWidth = (this.oppoHP/250)*160;
+                        this.playerAttack=true;
+                        this.opponentShake=true;
+                        setTimeout(()=>{
+                            this.playerAttack=false;
+                            this.opponentShake=false;
+                        },1000);
+                        pokemonApp.oppoHpObj.width= newWidth + "px";
+                       // check if opponent fainted
+                        if (this.oppoHP < 0){
+                            this.restart();
+                        } else {
+                            setTimeout(()=> {
+                            this.showbottomright=true;
+                                this.bottomText="Che vuoi fare?";
+                                this.currentTurn="opponent";
+                                this.absolAttack();
+                            },1000);                           
+                            
+                        }
+                        
+                    }
+
+                },
+                
+                absolAttack: function(){
+                        this.showbottomright=false;
+                        
+                        this.bottomText="Carlo ti mena per finta!";
+                        this.userHP-=1;
+                        console.log("La tua vita è " + this.oppoHP);
+                        // 160px health is considered 100%
+                        var newWidth = (this.userHP/300)*160;
+                        this.oppoAttack=true;
+                        this.playerShake=true;
+                        setTimeout(()=>{
+                            this.oppoAttack=false;
+                            this.playerShake=false;
+                        },500);
+                        this.userHpObj.width= newWidth + "px";
+
+                        setTimeout(()=> {
+                            this.showbottomright=true;
+                            this.bottomText="Che vuoi fare?";
+                        },1000);
+                        
+                        this.currentTurn="player";
+                },
+                reinitialize: function(){
+                    this.option1="Combatti";
+                    this.option2="Grida";
+                    this.option3="Pokémon";
+                    this.option4="Scappa";
+                    this.backStatus=false;
+                    this.tooltipStatus=false;
+                    this.fightOptionStatus=true;
+                    this.bottomText="Che vuoi fare?";
+                    this.playerShake=false;
+                    this.opponentShake=false;
+                },
+                restart: function(){
+                    this.userHP=300;
+                    this.userHpObj.width="160px";
+                    this.oppoHP=250;
+                    this.oppoHpObj.width="160px";
+                    this.option1="Combatti";
+                    this.option2="Grida";
+                    this.option3="Pokémon";
+                    this.option4="Scappa";
+                    this.backStatus=false;
+                    this.tooltipStatus=false;
+                    this.fightOptionStatus=true;
+                    this.bottomText="Carlo è svenuto! La lotta ricomincia.";
+                     setTimeout(()=> {
+                        this.showbottomright=true;
+                        this.bottomText="Che vuoi fare?";
+                    },2000);   
+                }
+            }
+
+        })
+    </script>
+    
+    <!--   <script src="main.js"></script> -->
+</body>
+
+</html>
