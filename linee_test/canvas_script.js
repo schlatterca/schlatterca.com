@@ -6,7 +6,7 @@ var myInterval = 10;
 var mySquareInterval = 4;
 
 var myStrokeColor = 'red';
-var myStrokeWidth = 40;
+var myStrokeWidth = 20;
 var myStrokeCap = 'square';
 var myStrokeJoin = 'square';
 var mySize = 60;
@@ -36,37 +36,95 @@ function onMouseMove(event) {
 	var extra = 2.5; //to align the path to the cursor
 	var canvasWidthLimit = project.view.viewSize.width - (limit+1);
 	var canvasHeightLimit = project.view.viewSize.height - (limit+1);
-
-	if($('.mainmenu > .button_3').hasClass('active')){
-		//myPath.simplify(10);
-		//myPath.flatten(1);
-	}
+	var line;
+	var zigZag;
 
 	if($('.mainmenu > .button_1').hasClass('active')){
-		/*if (mySquareInterval >= 4) {
-			var rectangle = new Rectangle(new Point(event.point.x, event.point.y), new Size(mySize, mySize));
-			var path = new Path.Rectangle(rectangle);
-			path.fillColor = 'red';
-
-			mySquareInterval = 0;
+		if (myInterval >= 10) {
+			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+			//var raster = myPath.rasterize(10);
+			myInterval = 0;
 		}
-		mySquareInterval++;*/
+		myInterval++;
 	}
 	
 	else if($('.mainmenu > .button_2').hasClass('active')){
-		drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
-	}
-
-
-	else if($('.mainmenu > .button_3').hasClass('active')){
-		//window.setInterval(drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra), 50000);
-		//window.setInterval(console.log('ciao'), 50000);
-		if (myInterval >= 10) {
+		if (myInterval >= 4) {
 			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
 			myInterval = 0;
 		}
 		myInterval++;
+		//drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
 		
+		//myPath.flatten(10);
+		//myPath.simplify();
+		//myPath.divideAt(myPath.length / 2);
+		//myPath.smooth();
+		//roundPath(myPath, 2);
+
+		myPath.smooth({ type: 'continuous' });
+		//myPath.smooth({ type: 'asymmetric' });
+		//myPath.smooth({ type: 'catmull-rom' });
+		//myPath.smooth({ type: 'geometric' });
+	}
+
+
+	else if($('.mainmenu > .button_3').hasClass('active')){
+
+		if (myInterval >= 10) {
+			/*drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+			myInterval = 0;
+
+			var semiLastPoint = myPath._segments[myPath._segments.length - 2]._point;
+			var lastPoint = myPath._segments[myPath._segments.length - 1]._point;
+			var distance = lastPoint - semiLastPoint;
+			console.log(distance);
+			if((distance.x > 50)||(distance.y > 50)||(distance.x < -50)||(distance.y < -50)){
+				var pointX = {x: event.point.x-30, y: event.point.y-40};
+				var differentEvent = {point: pointX};
+				console.log(event, differentEvent);
+				drawFunction(differentEvent, limit, canvasWidthLimit, canvasHeightLimit, extra);
+				return
+			}*/
+
+			//zigzag continuo, proporzionale alla lunghezza dell'ultimo tratto
+			if(myPath._segments.length <= 2){
+				console.log(myPath._segments.length);
+				drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+			} else {
+				var semiLastPoint = myPath._segments[myPath._segments.length - 2]._point;
+				var lastPoint = myPath._segments[myPath._segments.length - 1]._point;
+				var distance = lastPoint - semiLastPoint;
+				console.log(distance);
+				var randomX = (Math.round(Math.random()) * 2 - 1)*(distance.y/3);
+				var randomY = (Math.round(Math.random()) * 2 - 1)*(distance.x/3);
+
+				var pointX = {x: event.point.x+randomX, y: event.point.y+randomY};
+				var differentEvent = {point: pointX};
+				console.log(event, differentEvent);
+				drawFunction(differentEvent, limit, canvasWidthLimit, canvasHeightLimit, extra);
+			}
+			myInterval = 0;
+		}
+		myInterval++;
+		
+		/*zigZag = createZigZagFromLine(myPath);
+		myPath.lastSegment.point = event.point;
+		if (zigZag) {
+			zigZag.remove();
+		}
+		zigZag = createZigZagFromLine(myPath);*/
+
+		/*var step = event.delta / 2;
+		step.angle += 90;
+		//step.angle += Math.random() * 360;
+		var top = event.middlePoint + step;
+		var bottom = event.middlePoint - step;
+		myPath.add(top);
+		myPath.add(bottom);
+		//path.insert(0,bottom);
+		//myPath.smooth();*/
+
 	}
 }
 
@@ -77,6 +135,10 @@ function onMouseUp(event) {
 	});
 	myCircle.strokeColor = 'black';
 	myCircle.fillColor = 'white';*/
+
+	/*if($('.mainmenu > .button_2').hasClass('active')){
+		roundPath(myPath, 2);
+	}*/
 }
 
 var items = project.getItems({
@@ -116,82 +178,97 @@ var items = project.getItems({});
 } );*/
 
 
+
+
+var mySize = 80;
+var jump = 80;
+var myGrid = new Group();
+var usedGrid = 0;
+var percentToCover = 3; /*10 for testing*/
+
+for (var i = 0; i < project.view.viewSize.width; i+=jump) {
+	for (var j = 0; j < project.view.viewSize.height; j+=jump) {
+		var gridPart = new Path.Rectangle({
+			center:[i-jump/2, j-jump/2],
+			size: [mySize,mySize],
+			strokeColor: 'transparent',
+			fillColor: 'transparent'
+		})
+		myGrid.addChild(gridPart);
+	}
+}
+
+var firstPause = 1000;
+var phaseDuration = 3000;
+
 function drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra) {
 	if ((event.point.x > limit)&&(event.point.x < canvasWidthLimit)&&
 		(event.point.y > limit)&&(event.point.y < canvasHeightLimit)){
-		myPath.add(event.point.x + extra, event.point.y + extra);
-		//console.log(event.point);
-		//console.log(canvasWidthLimit);
-	} /*else if (event.point.x < limit) {
-		myPath.add(limit, event.point.y + extra);
-		myPath = new Path();
-		myPath.strokeColor = myStrokeColor;
-		myPath.strokeWidth = myStrokeWidth;
-		myPath.strokeCap = myStrokeCap;
-		myPath.strokeJoin = myStrokeJoin;
-	} else if (event.point.x > canvasWidthLimit) {
-		myPath.add(canvasWidthLimit, event.point.y + extra);
-		myPath = new Path();
-		myPath.strokeColor = myStrokeColor;
-		myPath.strokeWidth = myStrokeWidth;
-		myPath.strokeCap = myStrokeCap;
-		myPath.strokeJoin = myStrokeJoin;
-	} else if (event.point.y < limit) {
-		myPath.add(event.point.x + extra, limit);
-		myPath = new Path();
-		myPath.strokeColor = myStrokeColor;
-		myPath.strokeWidth = myStrokeWidth;
-		myPath.strokeCap = myStrokeCap;
-		myPath.strokeJoin = myStrokeJoin;
-	} else if (event.point.y > canvasHeightLimit) {
-		myPath.add(event.point.x + extra, canvasHeightLimit);
-		myPath = new Path();
-		myPath.strokeColor = myStrokeColor;
-		myPath.strokeWidth = myStrokeWidth;
-		myPath.strokeCap = myStrokeCap;
-		myPath.strokeJoin = myStrokeJoin;
-	}*/
-}
+		
+		/*OPTION 1*/
+		if($('.mainmenu > .button_1').hasClass('active')){
+			myPath.add(event.point.x + extra, event.point.y + extra);
 
-var drawGridRects = function(num_rectangles_wide, num_rectangles_tall, boundingRect) {
-    var width_per_rectangle = boundingRect.width / num_rectangles_wide;
-    var height_per_rectangle = boundingRect.height / num_rectangles_tall;
-    for (var i = 0; i < num_rectangles_wide; i++) {
-        for (var j = 0; j < num_rectangles_tall; j++) {
-            var aRect = new paper.Path.Rectangle(boundingRect.left + i * width_per_rectangle, boundingRect.top + j * height_per_rectangle, width_per_rectangle, height_per_rectangle);
-            aRect.strokeColor = 'white';
-            aRect.fillColor = 'white';
-			aRect.onMouseEnter = function() {
+			for (var i = 0; i < myGrid._children.length; i++) {
+				if((myGrid._children[i].intersects(myPath))&&(myGrid._children[i].fillColor != 'red')){
+					myGrid._children[i].fillColor = 'red';
 
-				if($('.mainmenu > .button_1').hasClass('active')){
-					this.strokeColor = 'red';
-					this.fillColor = 'red';
-				};
+					usedGrid ++;
+				}
 			}
-        }
-    }
+		}
+		if(($('.mainmenu > .button_1').hasClass('active'))&&(usedGrid >= myGrid._children.length/percentToCover)){
+			$('.mainmenu > .button_1').removeClass('active');
+			setTimeout(function() {activate($('.mainmenu > .button_2'))}, firstPause);
+			setTimeout(function() {$('.mainmenu > .button_2').removeClass('active')}, firstPause+phaseDuration);
+			setTimeout(function() {activate($('.mainmenu > .button_3'))}, (2*firstPause)+phaseDuration);
+			setTimeout(function() {$('.mainmenu > .button_3').removeClass('active')}, (2*firstPause)+(2*phaseDuration));
+			setTimeout(function() {$('.mainmenu > .button_3').removeClass('active'), $('#message')[0].innerText = 'finito!'}, (2*firstPause)+(2*phaseDuration));
+		}
+
+
+		/*OPTION 2*/
+		if($('.mainmenu > .button_2').hasClass('active')){
+			myPath.add(event.point.x + extra, event.point.y + extra);
+
+			/*console.log(myPath._segments[0]._point._x, myPath._segments[0]._point._y);
+			console.log(myPath._segments[myPath._segments.length-1]._point._x, myPath._segments[myPath._segments.length-1]._point._y);
+			var vector = myPath._segments[myPath._segments.length-1]._point - myPath._segments[0]._point;
+			console.log(vector.angle);
+			if (vector.angle > 45){
+				myPath.add(event.point.x + extra, event.point.y + extra);
+			}*/
+		}
+
+		else {
+			myPath.add(event.point.x + extra, event.point.y + extra);
+		}
+	}
 }
 
-drawGridRects(project.view.viewSize.width/40, project.view.viewSize.height/40, paper.view.bounds);
 
+//ACTIVATE OPTION 1
+setTimeout(function() {activate($('.mainmenu > .button_1'))}, 50);
 
-
-
-
-setTimeout(function() {activate($('.mainmenu > .button_2'))}, 3000);
+/*setTimeout(function() {activate($('.mainmenu > .button_2'))}, 3000);
 setTimeout(function() {activate($('.mainmenu > .button_3'))}, 6000);
-setTimeout(function() {$('.mainmenu > .button_3').removeClass('active'), $('#message')[0].innerText = 'finito!'}, 9000);
+setTimeout(function() {$('.mainmenu > .button_3').removeClass('active'), $('#message')[0].innerText = 'finito!'}, 9000);*/
 
 
 function activate(element){
 	$('.mainmenu > button').removeClass('active');
 	element.addClass('active');
 
-	if($('.mainmenu > .button_2').hasClass('active')){
+	if($('.mainmenu > .button_1').hasClass('active')){
+		myStrokeCap = 'square';
+		myStrokeJoin = 'square';
+		myStrokeColor = 'transparent';
+		myStrokeWidth = 8;
+	} else if($('.mainmenu > .button_2').hasClass('active')){
 		myStrokeCap = 'round';
 		myStrokeJoin = 'round';
 		myStrokeColor = 'blue';
-		myStrokeWidth = 8;
+		myStrokeWidth = 40;
 	} else if($('.mainmenu > .button_3').hasClass('active')) {
 		myStrokeCap = 'round';
 		myStrokeJoin = 'round';
@@ -203,16 +280,67 @@ function activate(element){
 	myPath.strokeColor = myStrokeColor;
 	myPath.strokeWidth = myStrokeWidth;
 	myPath.strokeCap = myStrokeCap;
-	//myPath.strokeJoin = myStrokeJoin;
-	
+	myPath.strokeJoin = myStrokeJoin;
+
 	//CHECK
 	myPath.dashOffset = 100;
 	myPath.strokeJoin = 'bevel';
-	myPath.closed = true;
+	myPath.closed = false;
 	myPath.fillColor = myStrokeColor;
 
-	if($('.mainmenu > .button_3').hasClass('active')){
+	if($('.mainmenu > .button_1').hasClass('active')){
+		myPath.closed = false;
+		myPath.fillColor = 'transparent';
+	} else if($('.mainmenu > .button_2').hasClass('active')){
+		//myPath.closed = true;
+		myPath.fillColor = 'blue';
+
+	} else if($('.mainmenu > .button_3').hasClass('active')){
 		myPath.closed = false;
 		myPath.fillColor = 'transparent';
 	}
-} 
+}
+
+
+//ROUNDPATH
+function roundPath(path,radius) {
+    var segments = path.segments.slice(0);
+    path.segments = [];
+    for(var i = 0, l = segments.length; i < l; i++) {
+        var curPoint = segments[i].point;
+        var nextPoint = segments[i + 1 == l ? 0 : i + 1].point;
+        var prevPoint = segments[i - 1 < 0 ? segments.length - 1 : i - 1].point;
+        var nextDelta = curPoint - nextPoint;
+        var prevDelta = curPoint - prevPoint;
+        nextDelta.length = radius;
+        prevDelta.length = radius;
+        path.add({
+            point:curPoint - prevDelta,
+            handleOut: prevDelta/2
+        });
+        path.add({
+            point:curPoint - nextDelta,
+            handleIn: nextDelta/2
+        });
+    }
+    path.closed = true;
+    return path;
+}
+
+
+function createZigZagFromLine(line) {
+    var zigZag = new Path({ selected: true });
+
+    var count = 4, length = line.length;
+    for (var i = 0; i <= count; i++) {
+        var offset = i / count * length;
+        var normal = i === 0 || i === count
+            ? new Point(0, 0)
+            : line.getNormalAt(offset) * 30;
+        var point = line.getPointAt(offset).add(i % 2 == 0 ? normal
+            : -normal);
+        zigZag.add(point);
+    }
+
+    return zigZag;
+}
