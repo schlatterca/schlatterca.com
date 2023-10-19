@@ -56,18 +56,21 @@ function onMouseMove(event) {
 			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
 			var myCircle = new Path.Circle({
 				center: event.point,
-				radius: 12
+				radius: 20
 			});
 			myCircle.strokeColor = 'transparent';
 			myCircle.fillColor = 'rgb(0,255,255)';
 		} else {
 
-			var semiLastPoint = myPath._parent._children[myPath._parent._children.length - 2]._segments[0]._point;
-			var lastPoint = myPath._parent._children[myPath._parent._children.length - 1]._segments[0]._point;
-			var distance = lastPoint - semiLastPoint;
-			console.log(distance);
 
-			var distanceQuota = distance.x + distance.y;
+			var semiLastPointX = myPath._parent._children[myPath._parent._children.length - 2]._segments[1]._point._x;
+			var semiLastPointY = myPath._parent._children[myPath._parent._children.length - 2]._segments[0]._point._y;
+			var lastPointX = myPath._parent._children[myPath._parent._children.length - 1]._segments[1]._point._x;
+			var lastPointY = myPath._parent._children[myPath._parent._children.length - 1]._segments[0]._point._y;
+			var distanceX = lastPointX - semiLastPointX;
+			var distanceY = lastPointY - semiLastPointY;
+
+			var distanceQuota = {x: Math.floor(distanceX), y:Math.floor(distanceY)};
 			console.log(distanceQuota);
 
 			//var pointX = {x: event.point.x+randomX, y: event.point.y+randomY};
@@ -77,7 +80,7 @@ function onMouseMove(event) {
 
 			var myCircle = new Path.Circle({
 				center: event.point,
-				radius: 12+distanceQuota/2
+				radius: 20+Math.max(0, distanceQuota.x)+Math.max(0, distanceQuota.y)
 			});
 			myCircle.strokeColor = 'transparent';
 			myCircle.fillColor = 'rgb(0,255,255)';
@@ -214,7 +217,7 @@ var mySize = 80;
 var jump = 80;
 var myGrid = new Group();
 var usedGrid = 0;
-var percentToCover = 5; /*10 for testing*/
+var percentToCover = 10; /*10 for testing*/
 
 for (var i = 0; i < project.view.viewSize.width; i+=jump) {
 	for (var j = 0; j < project.view.viewSize.height; j+=jump) {
