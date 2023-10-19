@@ -5,7 +5,7 @@ var globalStrokesPositions = [];
 var myInterval = 10;
 var mySquareInterval = 4;
 
-var myStrokeColor = 'red';
+var myStrokeColor = 'rgb(255,0,255)';
 var myStrokeWidth = 20;
 var myStrokeCap = 'square';
 var myStrokeJoin = 'square';
@@ -49,23 +49,66 @@ function onMouseMove(event) {
 	}
 	
 	else if($('.mainmenu > .button_2').hasClass('active')){
-		if (myInterval >= 4) {
-			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
-			myInterval = 0;
-		}
-		myInterval++;
-		//drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
-		
-		//myPath.flatten(10);
-		//myPath.simplify();
-		//myPath.divideAt(myPath.length / 2);
-		//myPath.smooth();
-		//roundPath(myPath, 2);
 
-		myPath.smooth({ type: 'continuous' });
-		//myPath.smooth({ type: 'asymmetric' });
-		//myPath.smooth({ type: 'catmull-rom' });
-		//myPath.smooth({ type: 'geometric' });
+		//larghezza pennello proporzionale alla lunghezza dell'ultimo tratto
+		//console.log(myPath._parent._children.length);
+		if(myPath._parent._children.length <= 4){
+			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+			var myCircle = new Path.Circle({
+				center: event.point,
+				radius: 12
+			});
+			myCircle.strokeColor = 'transparent';
+			myCircle.fillColor = 'rgb(0,255,255)';
+		} else {
+
+			var semiLastPoint = myPath._parent._children[myPath._parent._children.length - 2]._segments[0]._point;
+			var lastPoint = myPath._parent._children[myPath._parent._children.length - 1]._segments[0]._point;
+			var distance = lastPoint - semiLastPoint;
+			console.log(distance);
+
+			var distanceQuota = distance.x + distance.y;
+			console.log(distanceQuota);
+
+			//var pointX = {x: event.point.x+randomX, y: event.point.y+randomY};
+			//var differentEvent = {point: pointX};
+			//console.log(event, differentEvent);
+			//drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+
+			var myCircle = new Path.Circle({
+				center: event.point,
+				radius: 12+distanceQuota/2
+			});
+			myCircle.strokeColor = 'transparent';
+			myCircle.fillColor = 'rgb(0,255,255)';
+			
+			/*if(distance.x > 40){
+				for (i=0; i < distance.x; i++) {
+					for (j=0; j < distance.y; j++) {
+						var myCenter = {x:event.point.x + i, y:event.point.y + j};
+	
+						var myCircle = new Path.Circle({
+							center: myCenter,
+							radius: 8
+						});
+						myCircle.strokeColor = 'transparent';
+						myCircle.fillColor = 'rgb(0,255,255)';
+					}
+				}
+			}*/
+			/*for (i=0; i < distance.x; i+=10) {
+				for (j=0; j < distance.y; j+=10) {
+					var myCenter = {x:20, y:20};
+
+					var myCircle = new Path.Circle({
+						center: myCenter,
+						radius: 0.2
+					});
+					myCircle.strokeColor = 'transparent';
+					myCircle.fillColor = 'rgb(0,255,255)';
+				}
+			}*/
+		}
 	}
 
 
@@ -128,19 +171,6 @@ function onMouseMove(event) {
 	}
 }
 
-function onMouseUp(event) {
-	/*var myCircle = new Path.Circle({
-		center: event.point,
-		radius: 10
-	});
-	myCircle.strokeColor = 'black';
-	myCircle.fillColor = 'white';*/
-
-	/*if($('.mainmenu > .button_2').hasClass('active')){
-		roundPath(myPath, 2);
-	}*/
-}
-
 var items = project.getItems({
 	/*selected: true,
 	class: Path*/
@@ -184,7 +214,7 @@ var mySize = 80;
 var jump = 80;
 var myGrid = new Group();
 var usedGrid = 0;
-var percentToCover = 3; /*10 for testing*/
+var percentToCover = 5; /*10 for testing*/
 
 for (var i = 0; i < project.view.viewSize.width; i+=jump) {
 	for (var j = 0; j < project.view.viewSize.height; j+=jump) {
@@ -200,6 +230,7 @@ for (var i = 0; i < project.view.viewSize.width; i+=jump) {
 
 var firstPause = 1000;
 var phaseDuration = 3000;
+var lastPositionX = 0;
 
 function drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra) {
 	if ((event.point.x > limit)&&(event.point.x < canvasWidthLimit)&&
@@ -210,8 +241,8 @@ function drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra) 
 			myPath.add(event.point.x + extra, event.point.y + extra);
 
 			for (var i = 0; i < myGrid._children.length; i++) {
-				if((myGrid._children[i].intersects(myPath))&&(myGrid._children[i].fillColor != 'red')){
-					myGrid._children[i].fillColor = 'red';
+				if((myGrid._children[i].intersects(myPath))&&(myGrid._children[i].fillColor != 'rgb(255,0,255)')){
+					myGrid._children[i].fillColor = 'rgb(255,0,255)';
 
 					usedGrid ++;
 				}
@@ -227,18 +258,6 @@ function drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra) 
 		}
 
 
-		/*OPTION 2*/
-		if($('.mainmenu > .button_2').hasClass('active')){
-			myPath.add(event.point.x + extra, event.point.y + extra);
-
-			/*console.log(myPath._segments[0]._point._x, myPath._segments[0]._point._y);
-			console.log(myPath._segments[myPath._segments.length-1]._point._x, myPath._segments[myPath._segments.length-1]._point._y);
-			var vector = myPath._segments[myPath._segments.length-1]._point - myPath._segments[0]._point;
-			console.log(vector.angle);
-			if (vector.angle > 45){
-				myPath.add(event.point.x + extra, event.point.y + extra);
-			}*/
-		}
 
 		else {
 			myPath.add(event.point.x + extra, event.point.y + extra);
@@ -267,12 +286,12 @@ function activate(element){
 	} else if($('.mainmenu > .button_2').hasClass('active')){
 		myStrokeCap = 'round';
 		myStrokeJoin = 'round';
-		myStrokeColor = 'blue';
-		myStrokeWidth = 40;
+		myStrokeColor = 'rgb(0,255,255)';
+		myStrokeWidth = 12;
 	} else if($('.mainmenu > .button_3').hasClass('active')) {
 		myStrokeCap = 'round';
 		myStrokeJoin = 'round';
-		myStrokeColor = 'lawngreen';
+		myStrokeColor = 'rgb(255,255,0)';
 		myStrokeWidth = 8;
 	}
 
@@ -292,9 +311,8 @@ function activate(element){
 		myPath.closed = false;
 		myPath.fillColor = 'transparent';
 	} else if($('.mainmenu > .button_2').hasClass('active')){
-		//myPath.closed = true;
-		myPath.fillColor = 'blue';
-
+		myPath.closed = false;
+		myPath.fillColor = 'transparent';
 	} else if($('.mainmenu > .button_3').hasClass('active')){
 		myPath.closed = false;
 		myPath.fillColor = 'transparent';
@@ -302,30 +320,7 @@ function activate(element){
 }
 
 
-//ROUNDPATH
-function roundPath(path,radius) {
-    var segments = path.segments.slice(0);
-    path.segments = [];
-    for(var i = 0, l = segments.length; i < l; i++) {
-        var curPoint = segments[i].point;
-        var nextPoint = segments[i + 1 == l ? 0 : i + 1].point;
-        var prevPoint = segments[i - 1 < 0 ? segments.length - 1 : i - 1].point;
-        var nextDelta = curPoint - nextPoint;
-        var prevDelta = curPoint - prevPoint;
-        nextDelta.length = radius;
-        prevDelta.length = radius;
-        path.add({
-            point:curPoint - prevDelta,
-            handleOut: prevDelta/2
-        });
-        path.add({
-            point:curPoint - nextDelta,
-            handleIn: nextDelta/2
-        });
-    }
-    path.closed = true;
-    return path;
-}
+
 
 
 function createZigZagFromLine(line) {
