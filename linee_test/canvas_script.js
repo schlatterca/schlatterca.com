@@ -67,13 +67,13 @@ function onMouseMove(event) {
 			distanceQuota = {x: Math.floor(distanceX), y:Math.floor(distanceY)};
 		}
 		
-		tool.maxDistance = 20;
+		tool.maxDistance = 12;
 
 		console.log(distanceQuota.x);		
 
 		var myCircle = new Path.Circle({
 			center: event.point,
-			radius: 20+(Math.max(0, distanceQuota.x))+(Math.max(0, distanceQuota.y))
+			radius: 20+(Math.max(0, distanceQuota.x)*2)+(Math.max(0, distanceQuota.y)*2)
 		});
 		myCircle.strokeColor = 'transparent';
 		myCircle.fillColor = 'rgb(0,255,255)';
