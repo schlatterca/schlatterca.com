@@ -50,9 +50,44 @@ function onMouseMove(event) {
 	
 	else if($('.mainmenu > .button_2').hasClass('active')){
 
+		var strokeWidth = 3;
+		var radius = 20;
+		var distanceQuota = {x:0,y:0};
+		
+		drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
+		console.log(myPath);
+		if(myPath._segments.length > 3){
+			console.log(myPath._segments);
+			var semiLastPointX = myPath._segments[myPath._segments.length - 2]._point._x;
+			var semiLastPointY = myPath._segments[myPath._segments.length - 2]._point._y;
+			var lastPointX = myPath._segments[myPath._segments.length - 1]._point._x;
+			var lastPointY = myPath._segments[myPath._segments.length - 1]._point._y;
+			var distanceX = lastPointX - semiLastPointX;
+			var distanceY = lastPointY - semiLastPointY;
+			distanceQuota = {x: Math.floor(distanceX), y:Math.floor(distanceY)};
+		}
+		
+		tool.maxDistance = 20;
+
+		console.log(distanceQuota.x);		
+
+		var myCircle = new Path.Circle({
+			center: event.point,
+			radius: 20+(Math.max(0, distanceQuota.x))+(Math.max(0, distanceQuota.y))
+		});
+		myCircle.strokeColor = 'transparent';
+		myCircle.fillColor = 'rgb(0,255,255)';
+
+
+		
+		myPath = myPath(myCircle);
+		//var newPaintedPath = myPath.unite(myCircle);
+		//myPath.remove() ;
+		//myPath = newPaintedPath;
+		//myCircle.remove();
+
 		//larghezza pennello proporzionale alla lunghezza dell'ultimo tratto
-		//console.log(myPath._parent._children.length);
-		if(myPath._parent._children.length <= 4){
+		/*if(myPath._parent._children.length <= 4){
 			drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
 			var myCircle = new Path.Circle({
 				center: event.point,
@@ -62,7 +97,6 @@ function onMouseMove(event) {
 			myCircle.fillColor = 'rgb(0,255,255)';
 		} else {
 
-
 			var semiLastPointX = myPath._parent._children[myPath._parent._children.length - 2]._segments[1]._point._x;
 			var semiLastPointY = myPath._parent._children[myPath._parent._children.length - 2]._segments[0]._point._y;
 			var lastPointX = myPath._parent._children[myPath._parent._children.length - 1]._segments[1]._point._x;
@@ -71,12 +105,6 @@ function onMouseMove(event) {
 			var distanceY = lastPointY - semiLastPointY;
 
 			var distanceQuota = {x: Math.floor(distanceX), y:Math.floor(distanceY)};
-			console.log(distanceQuota);
-
-			//var pointX = {x: event.point.x+randomX, y: event.point.y+randomY};
-			//var differentEvent = {point: pointX};
-			//console.log(event, differentEvent);
-			//drawFunction(event, limit, canvasWidthLimit, canvasHeightLimit, extra);
 
 			var myCircle = new Path.Circle({
 				center: event.point,
@@ -85,33 +113,22 @@ function onMouseMove(event) {
 			myCircle.strokeColor = 'transparent';
 			myCircle.fillColor = 'rgb(0,255,255)';
 			
-			/*if(distance.x > 40){
-				for (i=0; i < distance.x; i++) {
-					for (j=0; j < distance.y; j++) {
-						var myCenter = {x:event.point.x + i, y:event.point.y + j};
+			console.log(distanceQuota);
+			if((distanceQuota.x > 20)&&(distanceQuota.y > 20)){
+				console.log('found', lastPointX, semiLastPointX);
+				for (i=lastPointX; i > semiLastPointX; i-=6) {
 	
-						var myCircle = new Path.Circle({
-							center: myCenter,
-							radius: 8
-						});
-						myCircle.strokeColor = 'transparent';
-						myCircle.fillColor = 'rgb(0,255,255)';
-					}
-				}
-			}*/
-			/*for (i=0; i < distance.x; i+=10) {
-				for (j=0; j < distance.y; j+=10) {
-					var myCenter = {x:20, y:20};
-
 					var myCircle = new Path.Circle({
-						center: myCenter,
-						radius: 0.2
+						center: {x:i, y:j},
+						radius: 2
 					});
 					myCircle.strokeColor = 'transparent';
-					myCircle.fillColor = 'rgb(0,255,255)';
+					myCircle.fillColor = 'red';
+
+					console.log('ue',i,j);
 				}
-			}*/
-		}
+			}
+		}*/
 	}
 
 
