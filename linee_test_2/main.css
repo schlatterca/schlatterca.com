@@ -1,0 +1,44 @@
+body {
+  padding: 20px;
+}
+
+* {
+  font-family: Helvetica;
+  color: black;
+}
+
+canvas {
+  border: 2px solid black;
+  width: 100%;
+  height: 80vh;
+}
+
+.mainmenu {
+  display: flex;
+  gap: 20px;
+}
+
+.mainmenu > button {
+  background-color: white;
+  padding: 10px;
+  height: calc(1em + 40px);
+  width: calc(1em + 40px);
+  cursor: pointer;
+}
+.mainmenu > button:hover {
+  background-color: rgb(200,200,200);
+}
+.mainmenu > button.active {
+  background-color: rgb(60,60,60);
+  color: white;
+  cursor: pointer;
+}
+.mainmenu > .button_1 {
+  border: 2px solid rgb(2, 1, 1)
+}
+.mainmenu > .button_2 {
+  border: 2px solid blue;
+}
+.mainmenu > .button_3 {
+  border: 2px solid green;
+}
