@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>carlo schlatter</title>
+<title>titolo</title>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 <script src="script.js"></script>
+<!--script src="matter.js"></script>
+<script src="matter.min.js"></script>
+<script src="matter_script.js"></script-->
 <style>
 </style>
 
@@ -23,19 +26,61 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-package/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-package/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-package/favicon-16x16.png">
-<!--link rel="manifest" href="favicon-package/manifest.json"-->
+<link rel="manifest" href="favicon-package/manifest.json">
 <meta name="msapplication-TileColor" content="#F09DFA">
 <meta name="msapplication-TileImage" content="favicon-package/ms-icon-144x144.png">
-<meta name="theme-color" content="#F09DFA">
-
+<meta name="theme-color" content="#000000">
 
 <!--BODY-->
-<body style="background-color:#282828" >
-    <h1 style='font-family: Helvetica; color: #ff6251'>scusa! sito in costruzione.</h1>
-</body>
+<body>
+  <!--main>
+    <h1>ok</h1>
+  </main-->
 
-<!--SCRIPT-->
-<script>
-</script>
+  <main class='about'>
+    <p>
+      <span class='mono link active' onclick='changeLang(this, "eng")'>HELLO!</span>
+      &nbsp;
+      <span class='mono link' onclick='changeLang(this, "ita")'>CIAO!</span
+      </p>
+    <p class='aboutme'>I&nbsp;am&nbsp;Carlo, a&nbsp;graphic designer based in&nbsp;Italy.
+      My&nbsp;educational background combines Philosophy
+      (BA,&nbsp;UNIBO) with Graphic Design (BA + MA, ISIA U)
+      as&nbsp;well&nbsp;as&nbsp;internships at&nbsp;Studio Armin Linke, Berlin and&nbsp;Studio Leonardo Sonnoli, Rimini.
+      <br><br>I&nbsp;am&nbsp;particularly interested in the blending of&nbsp;different languages, especially when it&nbsp;comes to&nbsp;editorial design and&nbsp;coding.
+      <br><br>Aside from my&nbsp;field of&nbsp;study and&nbsp;work, I&nbsp;am&nbsp;passionate about politics and&nbsp;sociology, breaking news and&nbsp;crosswords, marathons and&nbsp;unusual foods, ’70s&nbsp;dance music and&nbsp;black humor, videogames and&nbsp;odd&nbsp;pairings.
+      <br><br>But if you wish to get to know me better, you&nbsp;can&nbsp;try my&nbsp;<a href='/ciao/'>introduction simulator</a>.
+    </p>
+    <p class='impressum'>Type: Fraktion + Neue Montreal (Pangram Pangram).
+      <br>This website does not use cookies.
+    </p>
+  </main>
+
+  <main class='projects'>
+    <!--div class='project'>
+      <div class='text'>
+        <p class='title'>NORA STUDIO ↗</p>
+        <p class='descr'>Web design and development for a dance collective based in Italy,
+          Santarcangelo, doing various projects. Web design and development for a dance collective based in Italy,
+          Santarcangelo, doing various projects. Web design and development for a dance collective based in Italy,
+          Santarcangelo, doing various projects.</p>
+        <p class='more'>Made with Wordpress..</p>
+      </div>
+      <div class='figure open'>
+        <img src='images/nora1.png'>
+      </div>
+    </div-->
+  </main>
+
+  <header>
+    <p>carlo schlatter</p>
+    <p><span class='link openWork active' onclick='openWork(this)'>WORK</a></span> / <span class='link openAbout' onclick='openAbout(this)'>ABOUT</a></p>
+  </header>
+
+  <footer>
+    <p><span>M: </span><a href='mailto:schlatterca@gmail.com'>schlatterca@gmail.com</a><br>
+      <span>T: </span><a href='tel:+39%20339%206975209'>+39 339 6975209</a></p>
+  </footer>
+</body>
 
 </html>
