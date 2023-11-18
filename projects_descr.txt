@@ -1,0 +1,59 @@
+<title>Nora studio</>
+<desc>Website developed for the creative studio Nora (Gianluca Patti + Bianca Sangalli Moretti) in Florence, specializing in graphic design, illustration and animation. Nora is the monkey that gives the studio its name: in Eastern cultures, a symbol of curiosity and resourcefulness.</>
+<desc_ita>Sito web per lo studio creativo Nora (Gianluca Patti + Bianca Sangalli Moretti) di Firenze, specializzato in progettazione grafica, illustrazione e animazione. Nora è la scimmia che dà il nome allo studio: nelle culture orientali, un simbolo di curiosità e intraprendenza.</>
+
+<title>Parini Secondo</>
+<desc>Artistic collective born in 2017 from an idea of Sissj Bassani and Martina Piazzi, mainly active in the field of dance with choreographies that question the relationship between art and originality, through an open source and DIY aesthetic.</>
+<desc_ita>Collettivo artistico nato nel 2017 da un’idea di Sissj Bassani e Martina Piazzi, attivo soprattutto nel campo della danza con coreografie che mettono in discussione il rapporto tra arte e originalità, attraverso un’estetica open source e DIY.</>
+
+<title>Age of Economics</>
+<desc>Independent group of artists, philosophers, designers, web specialists and economists from different parts of the world with different cultural and professional backgrounds, united by the goal of collecting and exposing ideas to help find opportunities and solutions for the common good.</>
+<desc_ita>Gruppo indipendente di artisti, filosofi, designer, specialisti del web ed economisti provenienti da diverse parti del mondo con background culturali e professionali differenti, uniti dall’obiettivo di raccogliere ed esporre idee per contribuire a trovare opportunità e soluzioni per il bene comune.</>
+
+<title>Harfenbiennale</>
+<desc>The second Innsbruck Harp Bienniale presents itself under the motto "Celtic String Play": ancient, folk and contemporary music come together in concerts and lectures, Austrian and world premieres, and purely musical events with international and local soloists and ensembles.</>
+<desc_ita>La seconda Biennale d’Arpa di Innsbruck si presenta con il motto “Celtic String Play”: musica antica, folk e contemporanea si fondono in concerti e conferenze, prime austriache e prime mondiali, ed eventi puramente musicali con solisti ed ensemble internazionali e locali.</>
+
+<title>Angela Rui</>
+<desc>Angela Rui is a design curator and researcher based in Milan. She holds a PhD in Exhibition Design from Politecnico di Milano, Faculty of Architecture. A former designer, she worked for years as a design editor and now contributes - through mentoring, curating, and writing - to revising the role of design as a critical practice that supports and protects eco-social renewal through experimental methodologies of systemic, relational, and regenerative design.</>
+<desc_ita>Angela Rui è una curatrice e ricercatrice di design con sede a Milano. Ha conseguito il dottorato di ricerca in Exhibition Design presso il Politecnico di Milano, Facoltà di Architettura. Ex designer, ha lavorato per anni come design editor e ora contribuisce - attraverso il mentoring, la curatela e la scrittura - a rivedere il ruolo del design come pratica critica che sostiene e protegge il rinnovamento eco-sociale attraverso metodologie sperimentali di design sistemico, relazionale e rigenerativo.</>
+
+<title>Sara Pizzinelli</>
+<desc>Sara Pizzinelli is an Italian graphic designer specializing in the arts and culture; she works on the visual communication of individual artists and festivals, ranging from performing arts to photography, from illustration to literature.</>
+<desc_ita>Sara Pizzinelli è una graphic designer italiana specializzata nel settore artistico e culturale; lavora alla comunicazione visiva di singoli artisti e festival, spaziando dalle arti performative alla fotografia, dall’illustrazione alla letteratura.</>
+
+<title>Fucina</>
+<desc>Fucina is the research and training space of IMAB Group, a Fermignano (PU) company that has been active in the interior design industry for more than 50 years. Fucina organizes meetings open to the public and professional training opportunities, intensive camps and events by promoting corporate and project culture in contemporary interior design.</>
+<desc_ita>Fucina è lo spazio di ricerca e formazione di IMAB Group, azienda di Fermignano (PU) attiva da oltre cinquant’anni nel settore dell’arredamento di interni. Fucina organizza incontri aperti al pubblico e occasioni formative professionali, camp intensivi ed eventi promuovendo la cultura aziendale e del progetto nell’ambito dell’arredamento contemporaneo.</>
+
+<title>Ex-press</>
+<desc>EX-PRESS is the consultation platform of the thesis projects achieved at ISIA U: a space of aggregation that aspires to promote a collectivity of voices, projects and outlooks, through the sharing of the numerous research documents created within the student community.</>
+<desc_ita>EX-PRESS è la piattaforma di consultazione dei progetti di tesi conseguiti presso ISIA U: uno spazio di aggregazione che ambisce a promuovere una collettività di voci, progetti e sguardi, attraverso la condivisione dei numerosi documenti di ricerca realizzati all’interno della comunità degli studenti.</>
+
+<title>G&H Consulting</>
+<desc>G&H Digital Strategy Consulting offers digital strategy consulting for companies of all sizes, combining marketing and IT best practices, guiding companies to achieve their ambitions through the development of customized strategies that enable them to make the most of technological and digital opportunities.</>
+<desc_ita>G&H Digital Strategy Consulting offre consulenze strategiche digitali per le aziende di ogni dimensione, combinando le migliori pratiche di marketing e IT, guidando le aziende a raggiungere le loro ambizioni attraverso l’elaborazione di strategie personalizzate che consentono di sfruttare al meglio le opportunità tecnologiche e digitali.</>
+
+<title>Harfenlabor</>
+<desc>Open source platform for discussion around the theme of the classical harp. The project led to the realization of the first Classical Harp Biennial at the Haus Der Musik in Innsbruck (2021), with the collaboration of internationally renowned harpist Margret Köll and artist, photographer and filmmaker Armin Linke.</>
+<desc_ita>Piattaforma open source di discussione intorno al tema dell’arpa classica. Il progetto ha portato alla realizzazione della prima Biennale d’Arpa Classica presso la Haus Der Musik di Innsbruck (2021), con la collaborazione dell’arpista di fama internazionale Margret Köll e dell’artista, fotografo e regista Armin Linke.</>
+
+<title>Paolo Barbieri</>
+<desc>Graphic designer, visual artist and teacher. His work has been selected in numerous competitions, including Autori di immagini, Print Club Torino, Inchiostro Festival, Descover Artist and 3x3 New York. He has worked for several studios, such as Parco Studio (2021), Studio Òbelo (2022) and Corraini Edizioni (2023).</>
+<desc_ita>Graphic designer, artista visivo e insegnante. I suoi lavori sono stati selezionati in numerosi concorsi, tra i quali Autori di immagini, Print Club Torino, Inchiostro Festival, Descover Artist e 3x3 New York. Ha lavorato per diversi studi, come Parco Studio (2021), Studio Òbelo (2022) e Corraini Edizioni (2023).</>
+
+<title>Il Miele di Ugo</>
+<desc>Il miele di Ugo is the product of settled beekeeping, marked by its connection to the rich countryside of Carrara di Fano, where the bees work undisturbed. Here Ugo can care for them every day, checking that each family is growing healthy and with all the resources it needs.</>
+<desc_ita>Il miele di Ugo è il prodotto di un’apicoltura stanziale, improntata al legame con la ricca campagna di Carrara di Fano, dove le api lavorano indisturbate. Qui Ugo può accudirle ogni giorno, controllando che ciascuna famiglia cresca in salute e con tutte le risorse necessarie.</>
+
+<title>Dazzle</>
+<desc>Dazzle is ISIA U's radio station; an open, constantly moving space shaped by its participants. A blind place in which to reshape visual design. It is a horizontal platform run by students for students, faculty, professionals and outsiders, in continuous dialogue with current events, inside and outside the Institute.</>
+<desc_ita>Dazzle è la radio di ISIA U; uno spazio aperto e in continuo movimento, plasmato dai suoi partecipanti. Un luogo cieco, in cui dare nuova forma alla progettazione visiva. È una piattaforma orizzontale gestita da studenti per studenti, docenti, professionisti ed esterni, in continuo dialogo con l’attualità, dentro e fuori l’Istituto.</>
+
+<title>Limunì</>
+<desc>Limuni is a small family property passed down from father to son, guarded and protected through the secrets of the trade, pruning techniques and treatments for plant defense.</>
+<desc_ita>Limunì è una piccola proprietà familiare tramandata di padre in figlio, custodita e protetta grazie ai segreti del mestiere, alle tecniche del potatore e ai trattamenti per la difesa della pianta.</>
+
+<title>Parade 2020</>
+<desc>ISIA Parade is the end-of-year event of ISIA Urbino. It showcases, in addition to a selection of dissertations from the last three sessions, the outputs of some of the courses and workshops held with national and international guests. In 2020 the event goes online with a new streaming format that brings together project showcases, interviews, playlists and more.</>
+<desc_ita>ISIA Parade è l’evento di fine anno di ISIA Urbino. In mostra, oltre a una selezione di tesi di laurea dalle ultime tre sessioni, gli output di alcuni corsi e dei workshop tenuti con ospiti nazionali e internazionali. Nel 2020 l’evento va online con un nuovo format streaming che raccoglie showcase di progetti, interviste, playlist e molto altro.</>
