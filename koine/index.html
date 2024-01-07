@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<title>KOINE</title>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<script src="airtable.browser.js"></script>
+<script src="airtable_script.js"></script>
+</head>
+
+<body>
+
+    <main id="list">
+        <h3>Koinè</h3>
+        <div id="words"></div>
+    </main>
+    
+    <main id="modal" hidden>
+        <div class="modal-content">
+            <span class="close" onclick=closeModal()>&times;</span>
+            <p class="chosenWord">Some text in the Modal..</p>
+        
+            <!--label for="definition">Dai una definizione: </label-->
+            <p>Dai una definizione della parola scelta.</p>
+            <p class='info'>Non è importante che la definizione sia corretta: prova a scrivere ciò che ti viene in mente.<br>
+            <span style='color:red'>Evita la ricorsività</span>: ad esempio, per definire "riaprire", non utilizzare la parola "aprire", "aperto" o affini.</p>
+            <textarea id="definition" name="definition" rows="4" cols="50"></textarea>
+
+            <p>Il tuo nome (opzionale)</p>
+            <textarea id="nome" name="nome" rows="1" cols="50"></textarea>
+        
+            <!--input type="submit" value="Submit"-->
+            <button style='margin-top: 2em' onclick="sendDefinition(this)">Invia</button>
+        </div>
+    </main>
+
+</body>
+
+</html>
