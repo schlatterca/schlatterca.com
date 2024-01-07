@@ -1,5 +1,5 @@
-const airtableApiKey = process.env.SECRET_APIKEY;
-console.log(airtableApiKey);
+//const airtableApiKey = process.env.SECRET_APIKEY;
+//console.log(airtableApiKey);
 
 var Airtable = require('airtable');
 // Get a base ID for an instance of art gallery example
