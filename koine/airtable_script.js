@@ -1,3 +1,6 @@
+const airtableApiKey = process.env.SECRET_APIKEY;
+console.log(airtableApiKey);
+
 var Airtable = require('airtable');
 // Get a base ID for an instance of art gallery example
 var base = new Airtable({ apiKey: 'pattXNrg1dENKpkj9.f14b70198486e0fd16929cabdcbbdc199a487d68ca638f4f08a3a54a99bb313d' }).base('appPGNwsWUArcPG3U');
