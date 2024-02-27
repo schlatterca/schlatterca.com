@@ -16,8 +16,8 @@ jQuery.get('projects.txt', function(data) {
 						"<div class='text'>"+
 							"<p class='title'><a target='_blank' href='"+projLink[i].replaceAll('<link>','').replaceAll('</>','')+"'>"+projTitles[i].replaceAll('<title>','')+
 							"&nbsp;↗</a></p>"+
-							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 							"<p class='more'>"+projMore[i].replaceAll('<more>','').replaceAll('</>','')+"</p>"+
+							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 						"</div>"+
 						"<div class='figure open'>"+
 							"<img src='images/"+projImages[i].replaceAll('<images>','').replaceAll('</>','')+"'>"+
@@ -28,8 +28,8 @@ jQuery.get('projects.txt', function(data) {
 				$( "<div class='project proj_"+i+"'>"+
 						"<div class='text'>"+
 							"<p class='title unactive'>"+projTitles[i].replaceAll('<title>','').replaceAll('</>','')+"</p>"+
-							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 							"<p class='more'>"+projMore[i].replaceAll('<more>','').replaceAll('</>','')+"</p>"+
+							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 						"</div>"+
 						"<div class='figure'>"+
 							"<img src='images/"+projImages[i].replaceAll('<images>','').replaceAll('</>','')+"'>"+
@@ -41,8 +41,8 @@ jQuery.get('projects.txt', function(data) {
 						"<div class='text'>"+
 							"<p class='title'><a target='_blank' href='"+projLink[i].replaceAll('<link>','').replaceAll('</>','')+"'>"+projTitles[i].replaceAll('<title>','')+
 							"&nbsp;↗</a></p>"+
-							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 							"<p class='more'>"+projMore[i].replaceAll('<more>','').replaceAll('</>','')+"</p>"+
+							"<p class='descr'>"+projDescr[i].replaceAll('<desc>','').replaceAll('</>','')+"</p>"+
 						"</div>"+
 						"<div class='figure'>"+
 							"<img src='images/"+projImages[i].replaceAll('<images>','').replaceAll('</>','')+"'>"+
